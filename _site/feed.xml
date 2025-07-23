@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Blog Template</title>
+    <description>A clean and modern blog template</description>
+    <link>http://0.0.0.0:5000/</link>
+    <atom:link href="http://0.0.0.0:5000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 23 Jul 2025 02:56:35 +0000</pubDate>
+    <lastBuildDate>Wed, 23 Jul 2025 02:56:35 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
+    
+      <item>
+        <title>Customizing Your Blog</title>
+        
+        <description>Learn how to customize and personalize your Jekyll blog.</description>
+        
+        <pubDate>Fri, 03 Jan 2025 12:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:5000/customizing-your-blog/</link>
+        <guid isPermaLink="true">http://0.0.0.0:5000/customizing-your-blog/</guid>
+        
+          
+            <category>customization</category>
+          
+            <category>css</category>
+          
+            <category>design</category>
+          
+        
+        
+          
+            <category>customization</category>
+          
+            <category>design</category>
+          
+        
+      </item>
+    
+      <item>
+        <title>Getting Started with Jekyll</title>
+        
+        <description>Learn the basics of Jekyll static site generator.</description>
+        
+        <pubDate>Thu, 02 Jan 2025 12:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:5000/getting-started-with-jekyll/</link>
+        <guid isPermaLink="true">http://0.0.0.0:5000/getting-started-with-jekyll/</guid>
+        
+          
+            <category>jekyll</category>
+          
+            <category>static-site</category>
+          
+            <category>tutorial</category>
+          
+        
+        
+          
+            <category>jekyll</category>
+          
+            <category>tutorial</category>
+          
+        
+      </item>
+    
+      <item>
+        <title>Welcome to My Blog</title>
+        
+        <description>Welcome to my blog! This is your first post to get you started.</description>
+        
+        <pubDate>Wed, 01 Jan 2025 12:00:00 +0000</pubDate>
+        <link>http://0.0.0.0:5000/welcome-to-my-blog/</link>
+        <guid isPermaLink="true">http://0.0.0.0:5000/welcome-to-my-blog/</guid>
+        
+          
+            <category>introduction</category>
+          
+            <category>first-post</category>
+          
+        
+        
+          
+            <category>blogging</category>
+          
+            <category>welcome</category>
+          
+        
+      </item>
+    
+  </channel>
+</rss>

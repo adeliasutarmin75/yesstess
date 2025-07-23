@@ -1,0 +1,201 @@
+---
+layout: page
+title: Search
+permalink: /search/
+---
+
+<div class="search-page">
+  <div class="search-form">
+    <form role="search" method="get" action="/search/">
+      <div class="input-group">
+        <input type="search" name="q" id="search-input" class="form-control" placeholder="Search articles..." aria-label="Search">
+        <button type="submit" class="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+      </div>
+    </form>
+  </div>
+  
+  <div id="search-results" class="search-results">
+    <p class="search-instructions">Enter your search terms above to find content on this site.</p>
+  </div>
+</div>
+
+<style>
+  .search-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .search-form {
+    margin-bottom: 2rem;
+  }
+  
+  .search-form .input-group {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-form .form-control {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .search-form .search-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-form .search-btn:hover {
+    background: #0056b3;
+  }
+  
+  .search-results-header h3 {
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+  
+  .search-results-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .search-result-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid transparent;
+  }
+  
+  .search-result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-left-color: #007bff;
+  }
+  
+  .search-result-item h4 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .search-result-item h4 a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .search-result-item h4 a:hover {
+    text-decoration: underline;
+  }
+  
+  .search-result-excerpt {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .search-result-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  .search-no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  .search-instructions {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+  }
+  
+  .search-no-results {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+  }
+  
+  .search-suggestions {
+    margin-top: 1rem;
+    text-align: left;
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+  }
+  
+  .search-suggestions ul {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+  }
+  
+  .search-suggestions li {
+    margin-bottom: 0.25rem;
+  }
+  
+  .search-result-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #888;
+    flex-wrap: wrap;
+  }
+  
+  .search-result-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .search-result-meta .feather {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .search-result-tags,
+  .search-result-categories {
+    background: var(--tag-bg);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+  }
+  
+  mark {
+    background: #ffeb3b;
+    color: #333;
+    padding: 0.1rem 0.2rem;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .search-page {
+      padding: 1rem;
+    }
+    
+    .search-result-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .search-suggestions {
+      text-align: center;
+    }
+  }
+</style>
+
+<script src="{{ '/assets/js/search.js' | relative_url }}"></script>

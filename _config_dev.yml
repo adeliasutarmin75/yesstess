@@ -1,0 +1,20 @@
+# Development configuration overrides
+baseurl: ""
+url: "http://localhost:5000"
+
+# Development-specific settings
+show_drafts: true
+future: true
+incremental: false
+profile: true
+
+# Faster regeneration in development
+sass:
+  style: expanded
+  sourcemap: true
+  
+# Enable live reload in development
+livereload: true
+
+# Less strict for development
+strict_front_matter: false

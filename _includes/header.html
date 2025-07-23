@@ -1,0 +1,57 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="site-branding">
+        <a href="{{ '/' | relative_url }}" class="site-logo">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-symbol">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span class="site-title">{{ site.title }}</span>
+        </a>
+      </div>
+      
+      <nav class="site-navigation">
+        {% include navigation.html %}
+      </nav>
+      
+      <div class="header-actions">
+        <div class="search-toggle">
+          <button id="search-toggle-btn" aria-label="Search">
+            <i data-feather="search"></i>
+          </button>
+        </div>
+        
+        <div class="dark-mode-toggle">
+          {% include dark-mode-toggle.html %}
+        </div>
+        
+        <div class="mobile-menu-toggle d-lg-none">
+          <button id="menu-toggle-btn" aria-label="Menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="searchBox" class="search-box">
+      {% include search-live.html %}
+    </div>
+  </div>
+  
+  <div id="mobileMenu" class="mobile-menu d-lg-none">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <div class="mobile-search">
+          {% include search-live.html %}
+        </div>
+      </div>
+      <nav class="mobile-navigation">
+        {% include navigation.html %}
+      </nav>
+    </div>
+  </div>
+  
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+</header>

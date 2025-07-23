@@ -1,0 +1,58 @@
+<article class="post-card h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-card-inner">
+    <a href="{{ include.post.url | relative_url }}" class="post-card-image-link u-url" itemprop="url">
+      {% if include.post.image %}
+        <div class="responsive-image-container post-card-image-wrapper" data-title="{{ include.post.title }}">
+          <picture>
+            <img 
+              src="{% if include.post.image contains '://' %}{{ include.post.image }}{% else %}{{ include.post.image | relative_url }}{% endif %}" 
+              alt="{{ include.post.title }}" 
+              class="responsive-image post-card-image" 
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+              data-error-handled="true"
+              onerror="this.src='/assets/img/default-post-image.svg'">
+          </picture>
+        </div>
+      {% else %}
+        <div class="responsive-image-container post-card-image-wrapper placeholder-added" data-title="{{ include.post.title }}" style="background: linear-gradient(110deg, rgb(236, 236, 236) 8%, rgb(245, 245, 245) 18%, rgb(236, 236, 236) 33%) 0% 0% / 200% 100%; animation: 1.5s linear 0s infinite normal none running placeholderShimmer;">
+          <picture>
+            <img 
+              src="/assets/img/default-post-image.svg" 
+              alt="{{ include.post.title }}" 
+              class="responsive-image post-card-image" 
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              data-error-handled="true">
+          </picture>
+        </div>
+      {% endif %}
+      
+      {% if include.post.categories and include.post.categories.size > 0 %}
+      <div class="post-card-categories">
+        {% for category in include.post.categories limit:1 %}
+        <span class="post-card-category p-category" itemprop="keywords">{{ category }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </a>
+    
+    <div class="post-card-content">
+      <h3 class="post-card-title p-name" itemprop="headline">
+        <a href="{{ include.post.url | relative_url }}" class="u-url">{{ include.post.title }}</a>
+      </h3>
+      
+      <div class="post-excerpt p-summary" itemprop="description">
+        {% if include.post.excerpt %}
+          {{ include.post.excerpt | strip_html | truncatewords: 18 }}
+        {% endif %}
+      </div>
+      
+      <div class="post-readmore">
+        <a href="{{ include.post.url | relative_url }}" class="btn-readmore" aria-label="Read article {{ include.post.title }}">
+          Read More <i class="icon fa fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>

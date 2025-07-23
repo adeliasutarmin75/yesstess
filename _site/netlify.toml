@@ -1,0 +1,72 @@
+[build]
+  publish = "_site"
+  command = "bundle exec jekyll build --future"
+
+[build.environment]
+  RUBY_VERSION = "3.1.0"
+  BUNDLE_VERSION = "2.3.0"
+  NODE_VERSION = "18"
+
+# Redirect rules for performance
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
+  force = true
+
+# Headers for all pages
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Feature-Policy = "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'"
+    
+# Cache static assets
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    
+# Service Worker
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Content-Type = "application/javascript"
+
+# HTML files
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+    Link = "</critical.css>; rel=preload; as=style"
+    
+# Performance optimization
+[[headers]]
+  for = "/critical.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "text/css"
+
+# Preload key resources
+[[headers]]
+  for = "/"
+  [headers.values]
+    Link = '''</assets/css/main.css>; rel=preload; as=style,
+              </assets/js/main.js>; rel=preload; as=script,
+              </search.json>; rel=prefetch'''
+
+# Compress responses
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Encoding = "gzip"

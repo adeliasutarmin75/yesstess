@@ -1,0 +1,40 @@
+<footer class="site-footer" style="transform: none; transition: none;">
+  <div class="container" style="transform: none;">
+    <div class="footer-border" style="border-top: 2px solid #dee2e6; margin-bottom: 2rem;"></div>
+    
+    <div class="footer-top" style="transform: none;">
+      <div class="row" style="transform: none;">
+        <div class="col-12 d-flex justify-content-center" style="transform: none;">
+          <div class="footer-menu d-flex flex-wrap justify-content-center" style="transform: none;">
+            <div class="footer-links" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem;">
+              <a href="{{ '/about/' | relative_url }}" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">About</a>
+              <a href="{{ '/contact/' | relative_url }}" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Contact</a>
+              <a href="{{ '/disclaimer/' | relative_url }}" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Disclaimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #e9ecef; margin-top: 2rem;">
+      <div class="copyright" style="transform: none;">
+        <p style="transform: none; margin: 0; color: #6c757d; font-size: 0.9rem;">&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      </div>
+      
+      <div class="back-to-top">
+        <a href="#" id="back-to-top-btn" aria-label="Back to top" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #007bff; color: white; border-radius: 50%; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+          <i data-feather="chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+  });
+</script>

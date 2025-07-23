@@ -1,0 +1,37 @@
+{% comment %}
+Responsive Image Component
+Supports:
+- Auto resizing
+- Lazy loading
+- Featured image handling
+- Fallback images
+{% endcomment %}
+
+{% assign image_src = include.src %}
+{% assign default_image = '/assets/img/default-post-image.svg' %}
+
+<div class="responsive-image-container {% if include.wrapper_class %}{{ include.wrapper_class }}{% endif %}"
+     data-title="{{ include.alt | default: site.title }}">
+  <picture>
+    <img 
+      {% if include.src %}
+        {% if include.src contains '://' %}
+          src="{{ include.src }}"
+          class="responsive-image external-image"
+          onerror="this.onerror=null;this.src='{{ default_image | relative_url }}';this.classList.add('image-fallback');"
+        {% else %}
+          src="{{ include.src | relative_url }}"
+          class="responsive-image internal-image"
+          onerror="this.onerror=null;this.src='{{ default_image | relative_url }}';this.classList.add('image-fallback');"
+        {% endif %}
+      {% else %}
+        src="{{ default_image | relative_url }}"
+        class="responsive-image default-image"
+      {% endif %}
+      alt="{{ include.alt | default: 'Image' }}" 
+      loading="lazy"
+      sizes="(max-width: 768px) 100vw, 50vw"
+    >
+  </picture>
+
+</div>

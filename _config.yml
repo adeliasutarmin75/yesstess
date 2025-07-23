@@ -1,0 +1,230 @@
+# Site settings
+title: My Blog Template
+description: A clean and modern blog template
+author: Blog Author
+email: "info@adeliasutarmin75.github.io"
+baseurl: "/Blogiieeeess-ed" # the subpath of your site, e.g. /blog
+url: "https://adeliasutarmin75.github.io" # the base hostname & protocol for your site
+logo: /assets/img/logo.svg
+default_image: /assets/img/default-post-image.svg
+copyright_year: © 2025
+keywords: blog, template, jekyll, clean design, minimal
+
+# Build settings
+markdown: kramdown
+permalink: /:title/
+incremental: true
+include: ["_pages"]
+
+# Performance optimizations
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# Sass configuration for performance
+sass:
+  style: compressed
+  sourcemap: never
+  
+# Kramdown configuration for speed
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  input: GFM
+  hard_wrap: false
+  guess_lang: true
+  syntax_highlighter: none
+
+# Compression settings
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: []
+
+# Exclude system files and folders from processing and watching
+exclude:
+  - .local
+  - .replit
+  - .cache
+  - .config
+  - .git
+  - .jekyll-cache
+  - .bundle
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - replit.nix
+
+# Prevent regeneration of site for specific files
+keep_files:
+  - .git
+  - .jekyll-metadata
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  # - jekyll-minifier  # Disabled due to Uglifier ES6 compatibility issues - using Node.js tools instead
+  - jekyll-paginate
+  - jekyll-gzip
+
+plugins_dir: _plugins
+
+# Asset optimization is now handled by Node.js tools in GitHub Actions
+# This provides better ES6 support and more reliable builds
+    
+# Pagination settings
+paginate: 6
+paginate_path: "/page/:num/"
+
+# Performance settings
+future: false
+show_drafts: false
+limit_posts: 0
+timezone: Asia/Jakarta
+
+# Optimization settings
+generate_images_from_title: false
+auto_generate_excerpt: true
+excerpt_separator: "<!-- more -->"
+
+# Cache settings
+cache_dir: .jekyll-cache
+keep_files: [".git", ".svn", ".jekyll-cache"]
+
+# Build optimization
+profile: false
+safe: true
+whitelist: []
+highlighter: none
+strict_front_matter: false
+
+# Liquid optimization
+liquid:
+  error_mode: warn
+  strict_filters: false
+  strict_variables: false
+
+# Optimization for faster builds
+regenerate: true
+incremental: true
+strict_front_matter: false
+
+# SEO settings
+twitter:
+  username: myblog
+  card: summary_large_image
+facebook:
+  app_id: 
+  publisher: My Blog
+  admins: 
+social:
+  name: My Blog
+  links:
+    - https://twitter.com/myblog
+    - https://facebook.com/myblog
+    - https://instagram.com/myblog
+
+# Analytics
+google_analytics: 
+
+# Disqus comments
+disqus:
+  shortname: your-disqus-shortname
+
+# AdSense - COMPLETELY DISABLED
+adsense:
+  client_id: ""
+  enable_page_level_ads: false
+  enable_in_article_ads: false
+  enable_sidebar_ads: false
+  enable_popup_ads: false
+  popup_timeout: 0
+  posts_per_home: 12
+  ad_slots:
+    header: ""
+    sidebar: ""
+    in_article: ""
+    footer: ""
+  article_ad_positions: []
+
+# Collections
+# Note: We're using the built-in Jekyll category/tag system with plugin generators
+# instead of collections to fix the 404 errors
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      toc: true
+      share: true
+      related: true
+      # Default slug for posts if empty
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Custom Variables
+show_excerpts: true
+excerpt_separator: <!--more-->
+
+# Image settings
+generate_images_from_title: true # Set to true to generate images from post titles when no featured image is available
+prefer_webp: true # Use WebP format for better performance when available
+responsive_image_sizes: [300, 600, 900] # Used for responsive image srcset generation (future feature)
+auto_webp_conversion: true # Auto convert images to WebP format
+image_compression: 85 # Image quality (0-100, higher = better quality)
+lazy_loading: true # Enable lazy loading for images
+
+# Widget settings - control display of different widgets
+widgets:
+  sidebar:
+    enabled: true
+    recent_posts: true
+    categories: true
+    tags: false # Default off - set ke false
+    popular_posts: true
+    advertisement: true
+  footer:
+    enabled: true
+    about: true
+    categories: true
+    recent_posts: true
+    tags: false # Default off - set ke false
+  post:
+    share_buttons: true
+    
+# Featured posts settings
+featured_posts:
+  enabled: false
+  count: 3
+  show_excerpt: false
+  excerpt_length: 100
+  title: "Artikel Unggulan"
+  display_author: true
+  display_date: true
+  display_categories: true
+
+# Navigation menu - Disabled default navigation in favor of _data/navigation.yml
+# navigation entries moved to _data/navigation.yml
+    
+# Performance optimization
+compress_html: true # Minify HTML output
+compress_css: true # Minify CSS output
+compress_js: true # Minify JavaScript output
+use_async_scripts: true # Load non-critical scripts with async attribute

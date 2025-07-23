@@ -1,0 +1,2 @@
+# This file disables Jekyll processing for GitHub Pages/Cloudflare
+# Allows direct file serving without Jekyll transformation

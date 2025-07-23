@@ -1,0 +1,55 @@
+/* Logo Symbol Styles */
+.site-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.site-logo:hover {
+  transform: translateY(-1px);
+}
+
+.logo-symbol {
+  margin-right: 0.75rem;
+  color: #007bff;
+  transition: all 0.3s ease;
+}
+
+.site-logo:hover .logo-symbol {
+  color: #0056b3;
+  transform: rotate(5deg);
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.site-logo:hover .site-title {
+  color: #007bff;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .logo-symbol {
+  color: #4dabf7;
+}
+
+[data-theme="dark"] .site-logo:hover .logo-symbol {
+  color: #74c0fc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-symbol {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5rem;
+  }
+  
+  .site-title {
+    font-size: 1.25rem;
+  }
+}

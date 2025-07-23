@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="#f8f9fa"/>
+  <rect x="80" y="60" width="240" height="180" rx="8" fill="#e9ecef" stroke="#dee2e6" stroke-width="2"/>
+  
+  <!-- Mountain landscape icon -->
+  <path d="M120 180L140 150L160 170L180 140L200 160L220 130L240 150L260 120L280 140L300 160V200H120V180Z" fill="#6c757d"/>
+  
+  <!-- Sun icon -->
+  <circle cx="250" cy="100" r="20" fill="#ffd43b"/>
+  <path d="M250 70V80M250 120V130M280 100H270M230 100H220M273.3 83.3L266.6 90M233.4 110L226.7 116.7M273.3 116.7L266.6 110M233.4 90L226.7 83.3" stroke="#ffd43b" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Camera icon in center -->
+  <rect x="170" y="125" width="60" height="50" rx="6" fill="#495057"/>
+  <circle cx="200" cy="150" r="15" fill="#6c757d"/>
+  <circle cx="200" cy="150" r="8" fill="#adb5bd"/>
+  <rect x="185" y="130" width="8" height="5" rx="2" fill="#6c757d"/>
+  
+  <!-- Text below -->
+  <text x="200" y="220" text-anchor="middle" fill="#6c757d" font-family="Arial, sans-serif" font-size="16" font-weight="500">Default Image</text>
+</svg>

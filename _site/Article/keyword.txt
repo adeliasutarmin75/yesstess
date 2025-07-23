@@ -1,0 +1,44 @@
+# Keywords for automatic article generation
+# One keyword per line, lines starting with # are ignored
+
+modern living room design
+contemporary kitchen ideas
+bedroom decoration tips
+bathroom renovation guide
+home office setup ideas
+minimalist interior design
+cozy home decor
+small space solutions
+color scheme ideas
+lighting design tips
+furniture arrangement ideas
+wall decoration inspiration
+outdoor living spaces
+seasonal home decorating
+budget home improvement
+luxury interior design
+scandinavian design style
+industrial home decor
+bohemian interior style
+farmhouse design ideas
+smart home technology
+sustainable interior design
+vintage home decor
+modern bathroom design
+kitchen cabinet ideas
+bedroom storage solutions
+living room lighting
+dining room design
+home organization tips
+interior paint colors
+window treatment ideas
+flooring design options
+ceiling design ideas
+staircase design inspiration
+hallway decoration
+mudroom organization
+laundry room design
+basement finishing ideas
+attic conversion
+garage organization
+closet organization ideas

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  {% include performance-scripts.html %}
+  {% include head.html %}
+</head>
+<body>
+  <div class="wrapper">
+    {% include header.html %}
+    
+    <main class="content" aria-label="Content">
+      <div class="container">
+        <!-- Header ads disabled -->
+        <div class="row">
+          {{ content }}
+        </div>
+      </div>
+    </main>
+    
+    {% include footer.html %}
+  </div>
+
+  <!-- Popup ads disabled -->
+  
+  <!-- Core scripts loaded asynchronously -->
+  <script src="{{ '/assets/js/main.js' | relative_url }}" async></script>
+  <script src="{{ '/assets/js/dark-mode.js' | relative_url }}" async></script>
+  <script src="{{ '/assets/js/image-loader.js' | relative_url }}" async></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    window.performance.mark('scriptsLoaded');
+    window.performance.measure('loadTime', 'pageStart', 'scriptsLoaded');
+    
+    // Report performance metrics
+    window.addEventListener('load', function() {
+      if (window.performance && window.performance.getEntriesByType) {
+        const loadTime = window.performance.getEntriesByType('navigation')[0].loadEventEnd - window.performance.getEntriesByType('navigation')[0].navigationStart;
+        console.log('Page load time: ' + loadTime + 'ms');
+      }
+    });
+  </script>
+  
+  {% if jekyll.environment == 'production' and site.google_analytics %}
+    {% include google-analytics.html %}
+  {% endif %}
+</body>
+</html>

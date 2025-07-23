@@ -1,0 +1,67 @@
+---
+layout: default
+title: Page Not Found
+permalink: /404.html
+---
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="error-page text-center py-5">
+        <h1 class="display-1 text-primary">404</h1>
+        <h2 class="mb-4">Page Not Found</h2>
+        <p class="lead mb-4">Sorry, the page you are looking for doesn't exist.</p>
+        
+        <div class="error-actions">
+          <a href="{{ '/' | relative_url }}" class="btn btn-primary btn-lg me-3">
+            <i data-feather="home" class="me-2"></i>Go Home
+          </a>
+          <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline-secondary btn-lg">
+            <i data-feather="mail" class="me-2"></i>Contact Us
+          </a>
+        </div>
+        
+        <div class="mt-5">
+          <h5>You might be looking for:</h5>
+          <ul class="list-unstyled mt-3">
+            {% for post in site.posts limit:5 %}
+            <li class="mb-2">
+              <a href="{{ post.url | relative_url }}" class="text-decoration-none">
+                {{ post.title }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-page .display-1 {
+  font-size: 8rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .error-page .display-1 {
+    font-size: 4rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  feather.replace();
+});
+</script>

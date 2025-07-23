@@ -1,0 +1,154 @@
+/* Image Optimization and Fallback Styles */
+
+/* Popular Posts Image Enhancements */
+.popular-post-item .post-thumbnail {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.popular-post-item .post-thumbnail img {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image Loading States */
+.popular-post-item .post-thumbnail img:not(.loaded) {
+  opacity: 0.7;
+  filter: blur(1px);
+}
+
+.popular-post-item .post-thumbnail img.loaded {
+  opacity: 1;
+  filter: none;
+}
+
+/* External Image Handling */
+.popular-post-item .post-thumbnail img.external-image {
+  background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+}
+
+.popular-post-item .post-thumbnail img.internal-image {
+  background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+}
+
+.popular-post-item .post-thumbnail img.default-image {
+  background: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+}
+
+/* Image Fallback Styling */
+.popular-post-item .post-thumbnail img.image-fallback {
+  opacity: 0.9;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Loading Animation */
+.popular-post-item .post-thumbnail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* Hover Effects */
+.popular-post-item:hover .post-thumbnail img {
+  transform: scale(1.05);
+}
+
+.popular-post-item:hover .post-thumbnail::after {
+  opacity: 1;
+}
+
+/* Responsive Image Container Improvements */
+.responsive-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.responsive-image-container.popular-post-image {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.responsive-image-container picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.responsive-image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+/* Error State Styling */
+.image-error {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b4513;
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .popular-post-item .post-thumbnail {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  }
+  
+  .image-error {
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: #ecf0f1;
+  }
+}
+
+/* Performance Optimizations */
+.popular-post-item .post-thumbnail img {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Accessibility Improvements */
+.popular-post-item .post-thumbnail img[alt=""] {
+  opacity: 0.8;
+}
+
+.popular-post-item .post-thumbnail img:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+/* High Resolution Display Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .popular-post-item .post-thumbnail img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}

@@ -1,0 +1,68 @@
+# Professional SEO Article Generator Configuration
+# Optimized for GitHub Actions and Cloudflare deployment
+
+# Domain settings
+DEFAULT_DOMAIN=https://example.com
+OUTPUT_FOLDER=_posts
+IMAGES_FOLDER=assets/images
+
+# Article generation settings - Professional approach
+ARTICLES_PER_DAY=2
+ARTICLES_PER_RUN=1
+MIN_WORDS=3000
+MAX_WORDS=5000
+STRUCTURE_ANALYSIS=true
+PROFESSIONAL_TONE=true
+
+# AI Model settings - Optimized for quality
+MODEL_TITLE=gemini-1.5-flash
+MODEL_OUTLINE=gemini-1.5-pro
+MODEL_ARTICLE=gemini-1.5-pro
+MODEL_CONCLUSION=gemini-1.5-flash
+MAX_RETRIES=3
+RATE_LIMIT_REQUESTS=50
+
+# Image settings - Strategic usage
+INCLUDE_IMAGES=true
+DOWNLOAD_IMAGES=true
+MAX_IMAGES_PER_ARTICLE=3
+MIN_IMAGE_SIZE=10000
+STRATEGIC_IMAGE_PLACEMENT=true
+
+# SEO settings - Professional optimization
+CATEGORY=Blog
+PUBLISHER=Admin
+FEATURED_IMAGE_ENABLED=true
+META_DESCRIPTION_LENGTH=160
+FOCUS_KEYWORDS_COUNT=3
+
+# Language and quality settings
+FORCE_ENGLISH_OUTPUT=true
+DEFAULT_LANGUAGE=English
+CONTENT_QUALITY=professional
+TARGET_AUDIENCE=general
+
+# Internal linking and structure
+MAX_RELATED_LINKS=3
+ENABLE_INTERNAL_LINKING=true
+AUTO_GENERATE_OUTLINE=true
+SECTION_BASED_GENERATION=true
+
+# File paths - _Article folder structure
+KEYWORD_FILE=keyword.txt
+ARTICLE_LINKS_FILE=articles_data.json
+API_KEYS_FILE=apikey.txt
+PIXEL_CONFIG_FILE=pixel.txt
+
+# GitHub Actions safety settings
+ENABLE_AUTO_COMMIT=true
+COMMIT_MESSAGE=Professional article generated
+BRANCH_NAME=main
+SAFE_MODE=true
+DAILY_LIMIT_ENABLED=true
+
+# Error handling and logging
+ENABLE_FALLBACK_MODEL=true
+LOG_LEVEL=INFO
+DETAILED_LOGGING=true
+ERROR_RECOVERY=true

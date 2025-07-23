@@ -1,0 +1,8 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#f0f2f5"/>
+  <rect x="300" y="187.5" width="600" height="300" rx="8" fill="#e1e4e8"/>
+  <path d="M600 337.5C611.046 337.5 620 328.546 620 317.5C620 306.454 611.046 297.5 600 297.5C588.954 297.5 580 306.454 580 317.5C580 328.546 588.954 337.5 600 337.5Z" fill="#a0a4a8"/>
+  <path d="M650 437.5L620 387.5L590 437.5H650Z" fill="#a0a4a8"/>
+  <path d="M550 437.5L520 387.5L450 487.5H750L680 387.5L650 437.5H550Z" fill="#a0a4a8"/>
+  <text x="600" y="525" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#606060">Bloggers Image</text>
+</svg>

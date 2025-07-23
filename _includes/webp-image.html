@@ -1,0 +1,42 @@
+{% comment %}
+  Enhanced responsive image component with WebP support
+  Usage: {% include webp-image.html src="image.jpg" alt="Description" class="img-fluid" %}
+{% endcomment %}
+
+{% assign src = include.src %}
+{% assign alt = include.alt | default: "Image" %}
+{% assign class = include.class | default: "responsive-image" %}
+{% assign wrapper_class = include.wrapper_class | default: "responsive-image-container" %}
+{% assign loading = include.loading | default: "lazy" %}
+
+<div class="{{ wrapper_class }}">
+  <picture>
+    {% comment %} WebP version for modern browsers {% endcomment %}
+    {% if src contains '.jpg' or src contains '.jpeg' or src contains '.png' %}
+      {% assign webp_src = src | replace: '.jpg', '.webp' | replace: '.jpeg', '.webp' | replace: '.png', '.webp' %}
+      <source srcset="{{ webp_src }}" type="image/webp">
+    {% endif %}
+    
+    {% comment %} Fallback to original format {% endcomment %}
+    <img src="{{ src }}" 
+         alt="{{ alt }}" 
+         class="{{ class }}"
+         loading="{{ loading }}"
+         {% if include.width %}width="{{ include.width }}"{% endif %}
+         {% if include.height %}height="{{ include.height }}"{% endif %}
+         decoding="async"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+  </picture>
+  
+  {% comment %} Fallback placeholder if image fails to load {% endcomment %}
+  <div class="image-placeholder" style="display: none; align-items: center; justify-content: center; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 2rem; text-align: center;">
+    <div>
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-color-secondary);">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <polyline points="21,15 16,10 5,21"/>
+      </svg>
+      <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--text-color-secondary);">{{ alt }}</p>
+    </div>
+  </div>
+</div>

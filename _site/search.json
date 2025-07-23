@@ -1,0 +1,137 @@
+[
+  
+    {
+      "title": "Kitchen Renovation Tips: Transform Your Space on Any Budget",
+      "url": "/Blogi/kitchen-renovation-tips-any-budget/",
+      "date": "January 05, 2025",
+      "content": "# Kitchen Renovation Tips: Transform Your Space on Any Budget\n\nThe kitchen is often called the heart of the home, and a well-planned renovation can dramatically improve both functionality and value...",
+      "excerpt": "Essential tips for renovating your kitchen without breaking the bank, plus professional insights for every budget level.",
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "type": "post",
+      "categories": [
+        
+          "renovation",
+        
+          "kitchen"
+        
+      ],
+      "tags": [
+        
+          "kitchen",
+        
+          "renovation",
+        
+          "budget",
+        
+          "diy",
+        
+          "home-improvement"
+        
+      ]
+    },
+  
+    {
+      "title": "Modern Home Design Inspiration for 2025",
+      "url": "/Blogi/modern-home-design-inspiration-2025/",
+      "date": "January 04, 2025",
+      "content": "# Modern Home Design Inspiration for 2025\n\nThe world of interior design is constantly evolving, and 2025 brings exciting new trends that blend functionality with aesthetic appeal. Let's explore the...",
+      "excerpt": "Discover the latest trends in modern home design that will transform your living space in 2025.",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "type": "post",
+      "categories": [
+        
+          "design",
+        
+          "interior"
+        
+      ],
+      "tags": [
+        
+          "home-design",
+        
+          "modern",
+        
+          "inspiration",
+        
+          "interior-design"
+        
+      ]
+    },
+  
+    {
+      "title": "Customizing Your Blog",
+      "url": "/Blogi/customizing-your-blog/",
+      "date": "January 03, 2025",
+      "content": "## Personalizing Your Blog\n\nMaking your blog unique is important for building your brand and connecting with your audience.\n\n### Configuration\n\nStart by editing `_config.yml`:\n\n- Update site title ...",
+      "excerpt": "Learn how to customize and personalize your Jekyll blog.",
+      "image": "/assets/img/default-post-image.svg",
+      "type": "post",
+      "categories": [
+        
+          "customization",
+        
+          "design"
+        
+      ],
+      "tags": [
+        
+          "customization",
+        
+          "css",
+        
+          "design"
+        
+      ]
+    },
+  
+    {
+      "title": "Getting Started with Jekyll",
+      "url": "/Blogi/getting-started-with-jekyll/",
+      "date": "January 02, 2025",
+      "content": "## Introduction to Jekyll\n\nJekyll is a static site generator that transforms your plain text into static websites and blogs. It's perfect for creating fast, secure, and maintainable websites.\n\n### ...",
+      "excerpt": "Learn the basics of Jekyll static site generator.",
+      "image": "/assets/img/default-post-image.svg",
+      "type": "post",
+      "categories": [
+        
+          "jekyll",
+        
+          "tutorial"
+        
+      ],
+      "tags": [
+        
+          "jekyll",
+        
+          "static-site",
+        
+          "tutorial"
+        
+      ]
+    },
+  
+    {
+      "title": "Welcome to My Blog",
+      "url": "/Blogi/welcome-to-my-blog/",
+      "date": "January 01, 2025",
+      "content": "## Welcome to Your New Blog\n\nThis is your first blog post! You can edit this file to customize it with your own content. \n\n### Getting Started\n\nThis Jekyll blog template includes:\n\n- Clean, respons...",
+      "excerpt": "Welcome to my blog! This is your first post to get you started.",
+      "image": "/assets/img/default-post-image.svg",
+      "type": "post",
+      "categories": [
+        
+          "blogging",
+        
+          "welcome"
+        
+      ],
+      "tags": [
+        
+          "introduction",
+        
+          "first-post"
+        
+      ]
+    }
+  
+]

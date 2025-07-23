@@ -1,0 +1,137 @@
+---
+---
+
+/**
+ * Fix for mobile scrolling vibrations
+ * This is a focused solution for eliminating vibrations when scrolling
+ * on mobile devices while maintaining responsiveness
+ */
+
+/* Core mobile scrolling fixes */
+html, body {
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force disable animations and transformations on mobile devices */
+@media (max-width: 991px) {
+  * {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    will-change: auto !important;
+    transform-style: flat !important;
+    transform-origin: center center !important;
+    backface-visibility: hidden !important;
+  }
+  
+  /* Ensure the wrapper doesn't try to animate */
+  .wrapper, main, .container, .content, .row, .header, .footer {
+    transform: translate3d(0, 0, 0) !important;
+    will-change: auto !important;
+    transform-style: flat !important;
+    transform-origin: center center !important;
+  }
+  
+  /* Fix for sidebar animation which often causes issues */
+  .sidebar-widgets {
+    transform: none !important;
+    will-change: auto !important;
+    position: relative !important;
+    top: 0 !important;
+    z-index: auto !important;
+  }
+  
+  /* Fix for site footer which often causes vibration */
+  .site-footer {
+    position: relative !important;
+    transform: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+    z-index: 1 !important;
+    bottom: auto !important;
+  }
+  
+  /* Prevent specific elements from animating */
+  .post-thumbnail img,
+  .post-card,
+  .post-card-image,
+  a, button, 
+  .popular-post-item,
+  .footer-links a, 
+  .back-to-top a {
+    transform: none !important;
+    transition: none !important;
+    transform-style: flat !important;
+    animation: none !important;
+  }
+  
+  /* Fix for possible content shifting when scrolling */
+  img, video, iframe {
+    height: auto !important;
+    max-width: 100% !important;
+  }
+  
+  /* Lock viewport height during scrolling */
+  .container {
+    overflow-x: hidden !important;
+  }
+}
+
+/* Fix for any animation styles when scrolling to bottom */
+@media (max-width: 767px) {
+  .site-footer {
+    padding-bottom: env(safe-area-inset-bottom, 0);
+    transform: none !important;
+    -webkit-transform: none !important;
+    
+    &::before {
+      content: "";
+      display: block;
+      height: 1px;
+      background: transparent;
+      position: relative;
+    }
+  }
+  
+  /* Prevent any hover effects on mobile */
+  a:hover, a:active, a:focus,
+  button:hover, button:active, button:focus {
+    transform: none !important;
+  }
+  
+  /* Fix scroll behavior */
+  html {
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Additional iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* iOS specific fixes */
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll !important;
+  }
+  
+  /* Prevent rubber-banding/overscroll effect */
+  .wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}

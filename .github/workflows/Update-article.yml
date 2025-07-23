@@ -1,0 +1,215 @@
+  name: Update Article Generator
+
+  on:
+    schedule:
+      # Run 5 times daily: 2 AM, 6 AM, 10 AM, 2 PM, 6 PM UTC
+      - cron: '0 2 * * *'
+      - cron: '0 6 * * *'
+      - cron: '0 10 * * *'
+      - cron: '0 14 * * *'
+      - cron: '0 18 * * *'
+    workflow_dispatch: # Allow manual triggering
+      inputs:
+        force_generate:
+          description: 'Force generate article even if limit reached'
+          required: false
+          default: 'false'
+          type: boolean
+        test_mode:
+          description: 'Test mode - generate article without API calls (for testing workflow)'
+          required: false
+          default: 'false'
+          type: boolean
+        custom_topic:
+          description: 'Custom topic for article generation'
+          required: false
+          default: ''
+          type: string
+
+  jobs:
+    generate-article:
+      runs-on: ubuntu-latest
+      timeout-minutes: 30 # Prevent long-running jobs
+
+      permissions:
+        contents: write
+        actions: read
+        pull-requests: write
+        repository-projects: read
+
+      steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('Article/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          cd Article
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check rate limits and usage
+        id: check_limits
+        run: |
+          echo "SHOULD_GENERATE=true" >> $GITHUB_OUTPUT
+
+          # Check if we've already generated articles today
+          if [ -f "Article/last_run.json" ]; then
+            LAST_RUN=$(cat Article/last_run.json | python3 -c "import sys, json; print(json.load(sys.stdin).get('date', ''))")
+            TODAY=$(date +%Y-%m-%d)
+
+            if [ "$LAST_RUN" = "$TODAY" ] && [ "${{ github.event.inputs.force_generate }}" != "true" ]; then
+              DAILY_COUNT=$(cat Article/last_run.json | python3 -c "import sys, json; print(json.load(sys.stdin).get('daily_count', 0))")
+              if [ "$DAILY_COUNT" -ge 2 ]; then
+                echo "SHOULD_GENERATE=false" >> $GITHUB_OUTPUT
+                echo "Daily limit reached (2 articles). Skipping generation."
+              fi
+            fi
+          fi
+
+          # Check if articles_data.json exists and analyze usage
+          if [ -f "Article/articles_data.json" ]; then
+            echo "Found existing articles database. Analyzing..."
+            ARTICLE_COUNT=$(cat Article/articles_data.json | python3 -c "import sys, json; print(len(json.load(sys.stdin).get('articles', [])))")
+            echo "Total articles generated: $ARTICLE_COUNT"
+          else
+            echo "First time generation. Creating new articles database."
+          fi
+
+      - name: Generate professional article
+        if: steps.check_limits.outputs.SHOULD_GENERATE == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PIXEL_API_KEYS: ${{ secrets.PIXEL_API_KEYS }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          TEST_MODE: ${{ github.event.inputs.test_mode }}
+          CUSTOM_TOPIC: ${{ github.event.inputs.custom_topic }}
+          FORCE_GENERATE: ${{ github.event.inputs.force_generate }}
+        run: |
+          cd Article
+          echo "Starting professional article generation..."
+          
+          # Check if running in test mode
+          if [ "${{ github.event.inputs.test_mode }}" = "true" ]; then
+            echo "🧪 Running in TEST MODE - Limited API calls"
+            echo "TEST_MODE=true" >> test_config.env
+          fi
+          
+          # Check for custom topic
+          if [ -n "${{ github.event.inputs.custom_topic }}" ]; then
+            echo "📝 Using custom topic: ${{ github.event.inputs.custom_topic }}"
+            echo "CUSTOM_TOPIC=${{ github.event.inputs.custom_topic }}" >> test_config.env
+          fi
+          
+          # Run the article generator
+          python UpdateArticle.py
+
+          # Check if article was generated successfully
+          if [ $? -eq 0 ]; then
+            echo "Article generation completed successfully!"
+
+            # Display generation summary
+            if [ -f "articles_data.json" ]; then
+              echo "Generation Summary:"
+              python3 -c "
+  import json
+  with open('articles_data.json', 'r') as f:
+      data = json.load(f)
+      articles = data.get('articles', [])
+      if articles:
+          latest = articles[-1]
+          print(f'Title: {latest.get(\"title\", \"N/A\")}')
+          print(f'Word Count: {latest.get(\"word_count\", \"N/A\")}')
+          print(f'Images: {len(latest.get(\"images\", []))}')
+          print(f'Related Articles: {len(latest.get(\"related_articles\", []))}')
+  "
+            fi
+          else
+            echo "Article generation failed!"
+            exit 1
+          fi
+
+      - name: Update usage tracking
+        if: steps.check_limits.outputs.SHOULD_GENERATE == 'true'
+        run: |
+          cd Article
+          # Update last run tracking
+          TODAY=$(date +%Y-%m-%d)
+
+          if [ -f "last_run.json" ]; then
+            LAST_RUN=$(cat last_run.json | python3 -c "import sys, json; print(json.load(sys.stdin).get('date', ''))")
+            if [ "$LAST_RUN" = "$TODAY" ]; then
+              # Increment daily count
+              python3 -c "
+  import json
+  with open('last_run.json', 'r') as f:
+      data = json.load(f)
+  data['daily_count'] = data.get('daily_count', 0) + 1
+  data['last_updated'] = '$(date -u +%Y-%m-%dT%H:%M:%SZ)'
+  with open('last_run.json', 'w') as f:
+      json.dump(data, f, indent=2)
+  "
+            else
+              # New day, reset count
+              echo "{\"date\": \"$TODAY\", \"daily_count\": 1, \"last_updated\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > last_run.json
+            fi
+          else
+            # First run
+            echo "{\"date\": \"$TODAY\", \"daily_count\": 1, \"last_updated\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\"}" > last_run.json
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_limits.outputs.SHOULD_GENERATE == 'true'
+        run: |
+          # Configure git with proper credentials
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Set up authentication for push
+          git config --local credential.helper store
+
+          # Check if there are changes to commit
+          if ! git diff --quiet || ! git diff --cached --quiet; then
+            git add .
+            git commit -m "Auto-generate: New article created $(date +'%Y-%m-%d %H:%M UTC')"
+
+            # Try to push with enhanced error handling
+            if git push origin HEAD:${{ github.ref_name }}; then
+              echo "✅ Changes committed and pushed successfully"
+            else
+              echo "❌ Push failed. Checking repository permissions..."
+              echo "Repository: ${{ github.repository }}"
+              echo "Actor: ${{ github.actor }}"
+              echo "Token permissions may need to be configured in repository settings."
+              exit 1
+            fi
+          else
+            echo "No changes to commit"
+          fi
+
+  # Environment variables
+  env:
+    BUNDLE_DEPLOYMENT: true
+    BUNDLE_PATH: vendor/bundle
+    BUNDLE_CACHE: true
+    BUNDLE_CLEAN: true

@@ -1,0 +1,25 @@
+User-agent: *
+Sitemap: http://0.0.0.0:5000/sitemap.xml
+
+# Allow crawling of all content
+Allow: /
+
+# Important paths that should be indexed
+Allow: /posts/
+Allow: /categories/
+Allow: /tags/
+Allow: /about/
+Allow: /contact/
+
+# Disallow admin sections
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /login/
+
+# Disallow certain file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Crawl delay for better server performance
+Crawl-delay: 10

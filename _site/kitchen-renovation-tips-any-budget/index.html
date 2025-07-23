@@ -1,0 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Performance Optimization Scripts -->
+
+<!-- Critical CSS -->
+<style>
+/* Critical CSS for above-the-fold content */
+*{box-sizing:border-box}
+html{font-display:swap;scroll-behavior:smooth}
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;background-color:var(--bg-color);color:var(--text-color);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+.header{background:var(--card-bg);border-bottom:1px solid var(--border-color);position:sticky;top:0;z-index:1000}
+.navbar{padding:1rem 0}
+.container{max-width:1200px;margin:0 auto;padding:0 15px}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.post-card{background:var(--card-bg);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1);transition:transform .3s ease;contain:layout style paint;will-change:transform;transform:translateZ(0)}
+.post-card:hover{transform:translateY(-5px)}
+.post-card-image-wrapper{position:relative;width:100%;padding-top:56.25%;overflow:hidden;background-color:var(--card-bg)}
+.post-card-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.post-card-content{padding:1.5rem}
+.post-card-title{font-size:1.25rem;font-weight:600;margin-bottom:.5rem}
+.post-card-excerpt{color:var(--text-color-secondary);font-size:.95rem;line-height:1.6}
+.pagination-container{display:flex;justify-content:center;align-items:center;margin:3rem 0}
+.pagination-wrapper{display:flex;align-items:center;gap:2rem;background:var(--card-bg);border-radius:12px;padding:1rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.pagination-btn{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:all .3s ease;background:var(--link-color);color:white;contain:layout style paint;will-change:transform;transform:translateZ(0)}
+.pagination-btn:hover{transform:translateY(-3px)}
+img{max-width:100%;height:auto;display:block}
+img.lazy{opacity:0;transition:opacity .3s ease}
+img.loaded{opacity:1}
+@media(max-width:768px){body{font-size:16px}.post-grid{grid-template-columns:1fr;gap:1rem}.pagination-wrapper{flex-direction:column;gap:1rem}}
+</style>
+
+<!-- Preload key resources -->
+<link rel="preload" href="/Blogi/assets/css/main.css" as="style">
+<link rel="preload" href="/Blogi/assets/js/main.js" as="script">
+<link rel="preload" href="/Blogi/search.json" as="fetch" crossorigin>
+
+<!-- DNS prefetch for external resources -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<!-- DNS prefetch for ads removed -->
+
+<!-- Preconnect for faster loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Performance monitoring -->
+<script>
+// Performance timing
+window.performance = window.performance || {};
+window.performance.mark = window.performance.mark || function() {};
+window.performance.measure = window.performance.measure || function() {};
+window.performance.mark('pageStart');
+
+// Performance optimization initialization
+window.performance.mark('pageStart');
+
+// Lazy load non-critical resources
+window.addEventListener('load', function() {
+  window.performance.mark('pageLoaded');
+  
+  // Load non-critical CSS
+  const mainCSS = document.createElement('link');
+  mainCSS.rel = 'stylesheet';
+  mainCSS.href = '/Blogi/assets/css/main.css';
+  document.head.appendChild(mainCSS);
+  
+  // Load performance script
+  const perfScript = document.createElement('script');
+  perfScript.src = '/Blogi/assets/js/performance-boost.js';
+  perfScript.async = true;
+  document.body.appendChild(perfScript);
+});
+</script>
+
+<!-- Resource hints for better performance -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#007bff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<!-- Optimize for mobile performance -->
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- Prefetch important pages -->
+<link rel="prefetch" href="/Blogi/">
+<link rel="prefetch" href="/Blogi/search/">
+<link rel="prefetch" href="/Blogi/categories/">
+<link rel="prefetch" href="/Blogi/tags/">
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="base-url" content="/Blogi">
+
+
+  <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+
+  <title>Kitchen Renovation Tips: Transform Your Space on Any Budget | My Blog Template</title>
+  <meta property="og:title" content="Kitchen Renovation Tips: Transform Your Space on Any Budget" />
+  <meta name="twitter:title" content="Kitchen Renovation Tips: Transform Your Space on Any Budget" />
+
+
+
+  <meta name="description" content="Essential tips for renovating your kitchen without breaking the bank, plus professional insights for every budget level." />
+  <meta property="og:description" content="Essential tips for renovating your kitchen without breaking the bank, plus professional insights for every budget level." />
+  <meta name="twitter:description" content="Essential tips for renovating your kitchen without breaking the bank, plus professional insights for every budget level." />
+
+
+
+  <link rel="canonical" href="http://0.0.0.0:5000/kitchen-renovation-tips-any-budget/" />
+  <meta property="og:url" content="http://0.0.0.0:5000/kitchen-renovation-tips-any-budget/" />
+  <meta name="twitter:url" content="http://0.0.0.0:5000/kitchen-renovation-tips-any-budget/" />
+
+
+
+  <meta property="og:image" content="http://0.0.0.0:5000https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" />
+  <meta name="twitter:image" content="http://0.0.0.0:5000https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" />
+
+
+
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2025-01-05T14:30:00+00:00" />
+
+
+
+  
+  <meta property="article:section" content="renovation" />
+  
+  <meta property="article:section" content="kitchen" />
+  
+
+
+
+  
+  <meta property="article:tag" content="kitchen" />
+  
+  <meta property="article:tag" content="renovation" />
+  
+  <meta property="article:tag" content="budget" />
+  
+  <meta property="article:tag" content="diy" />
+  
+  <meta property="article:tag" content="home-improvement" />
+  
+
+
+
+  <meta name="twitter:site" content="@myblog" />
+  <meta name="twitter:creator" content="@myblog" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+  <meta name="keywords" content="kitchen, renovation, budget, diy, home-improvement" />
+
+
+<!-- HomeDesign Structured Data -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Kitchen Renovation Tips: Transform Your Space on Any Budget",
+  "image": "http://0.0.0.0:5000https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+  "datePublished": "2025-01-05T14:30:00+00:00",
+  "dateModified": "2025-01-05T14:30:00+00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Blog Author"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My Blog Template",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://0.0.0.0:5000/assets/img/logo.svg"
+    }
+  },
+  "description": "Essential tips for renovating your kitchen without breaking the bank, plus professional insights for every budget level.",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://0.0.0.0:5000/kitchen-renovation-tips-any-budget/"
+  },
+  "keywords": ["kitchen","renovation","budget","diy","home-improvement"]
+}
+</script>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Early Hints -->
+<link rel="preload" href="/assets/css/styles.css" as="style">
+<link rel="preload" href="/assets/js/performance.js" as="script">
+
+<!-- Module Preload -->
+<link rel="modulepreload" href="/assets/js/modules/main.js">
+<link rel="stylesheet" href="/Blogi/assets/css/styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/logo-styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/lazy-loading.css">
+<link rel="stylesheet" href="/Blogi/assets/css/fix-vibration.css">
+<link rel="stylesheet" href="/Blogi/assets/css/image-styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/mobile-scroll-fix.css">
+<link rel="stylesheet" href="/Blogi/assets/css/footer-responsive.css">
+<link rel="stylesheet" href="/Blogi/assets/css/sidebar-images.css">
+<link rel="stylesheet" href="/Blogi/assets/css/image-optimization.css">
+
+<link rel="alternate" type="application/rss+xml" title="My Blog Template" href="/Blogi/feed.xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- Additional SEO-specific tags -->
+
+<!-- Performance Scripts -->
+<script src="/Blogi/assets/js/performance.js" defer></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="site-branding">
+        <a href="/Blogi/" class="site-logo">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-symbol">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span class="site-title">My Blog Template</span>
+        </a>
+      </div>
+      
+      <nav class="site-navigation">
+        <ul class="nav-menu">
+  
+    
+      <li><a href="/Blogi/">Home</a></li>
+    
+  
+    
+      <li><a href="/Blogi/about/">About</a></li>
+    
+  
+    
+      <li><a href="/Blogi/contact/">Contact</a></li>
+    
+  
+    
+      <li><a href="/Blogi/documentation/">Documentation</a></li>
+    
+  
+    
+      <li><a href="/Blogi/archive/">Archive</a></li>
+    
+  
+    
+      <li><a href="/Blogi/sitemap/">Sitemap</a></li>
+    
+  
+</ul>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="search-toggle">
+          <button id="search-toggle-btn" aria-label="Search">
+            <i data-feather="search"></i>
+          </button>
+        </div>
+        
+        <div class="dark-mode-toggle">
+          <div class="theme-toggle">
+  <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+    <i data-feather="sun" class="light-icon"></i>
+    <i data-feather="moon" class="dark-icon"></i>
+  </button>
+</div>
+
+        </div>
+        
+        <div class="mobile-menu-toggle d-lg-none">
+          <button id="menu-toggle-btn" aria-label="Menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="searchBox" class="search-box">
+      <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>
+    </div>
+  </div>
+  
+  <div id="mobileMenu" class="mobile-menu d-lg-none">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <div class="mobile-search">
+          <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>
+        </div>
+      </div>
+      <nav class="mobile-navigation">
+        <ul class="nav-menu">
+  
+    
+      <li><a href="/Blogi/">Home</a></li>
+    
+  
+    
+      <li><a href="/Blogi/about/">About</a></li>
+    
+  
+    
+      <li><a href="/Blogi/contact/">Contact</a></li>
+    
+  
+    
+      <li><a href="/Blogi/documentation/">Documentation</a></li>
+    
+  
+    
+      <li><a href="/Blogi/archive/">Archive</a></li>
+    
+  
+    
+      <li><a href="/Blogi/sitemap/">Sitemap</a></li>
+    
+  
+</ul>
+      </nav>
+    </div>
+  </div>
+  
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+</header>
+
+    
+    <main class="content" aria-label="Content">
+      <div class="container">
+        <!-- Header ads disabled -->
+        <div class="row">
+          <div class="post-container col-lg-8">
+  <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a href="/Blogi/" itemprop="item">
+      <span itemprop="name">Home</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </span>
+  
+  
+    <span class="breadcrumb-separator">/</span>
+    <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+      <a href="/Blogi/category/renovation" itemprop="item">
+        <span itemprop="name">renovation</span>
+      </a>
+      <meta itemprop="position" content="2" />
+    </span>
+  
+  
+  <span class="breadcrumb-separator">/</span>
+  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">Kitchen Renovation Tips: Transform Your Space on Any Budget</span>
+    <meta itemprop="position" content="3" />
+  </span>
+</div>
+
+
+  <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+    <header class="post-header">
+      <h1 class="post-title p-name" itemprop="name headline">Kitchen Renovation Tips: Transform Your Space on Any Budget</h1>
+    </header>
+
+
+
+
+<div class="responsive-image-container post-featured-image"
+     data-title="Kitchen Renovation Tips: Transform Your Space on Any Budget">
+  <picture>
+    <img 
+      
+        
+          src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+          class="responsive-image external-image"
+          onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');"
+        
+      
+      alt="Kitchen Renovation Tips: Transform Your Space on Any Budget" 
+      loading="lazy"
+      sizes="(max-width: 768px) 100vw, 50vw"
+    >
+  </picture>
+
+</div>
+    <div class="post-toc">
+      <h4>Table of Contents</h4>
+      <div class="toc-container" id="toc-container">
+  <div class="toc-header" id="toc-header">
+    <h4 class="toc-title">Table of Contents</h4>
+    <button class="toc-toggle" id="toc-toggle" aria-label="Toggle Table of Contents">
+      <i data-feather="chevron-down" id="toc-toggle-icon"></i>
+    </button>
+  </div>
+  
+  <div class="toc-content" id="toc-content">
+    <ul class="toc-list">
+      
+      
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#kitchen-renovation-tips-transform-your-space-on-any-budget" class="toc-link">Kitchen Renovation Tips: Transform Your Space on Any Budget</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#planning-your-kitchen-renovation" class="toc-link">Planning Your Kitchen Renovation</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#start-with-a-clear-vision" class="toc-link">Start with a Clear Vision</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#set-a-realistic-budget" class="toc-link">Set a Realistic Budget</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#budget-friendly-renovation-ideas" class="toc-link">Budget-Friendly Renovation Ideas</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#cabinet-makeover-options" class="toc-link">Cabinet Makeover Options</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#smart-appliance-upgrades" class="toc-link">Smart Appliance Upgrades</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#countertop-alternatives" class="toc-link">Countertop Alternatives</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#mid-range-renovation-strategies" class="toc-link">Mid-Range Renovation Strategies</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#layout-improvements" class="toc-link">Layout Improvements</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#lighting-design" class="toc-link">Lighting Design</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#high-end-renovation-features" class="toc-link">High-End Renovation Features</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#premium-materials" class="toc-link">Premium Materials</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#luxury-additions" class="toc-link">Luxury Additions</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#diy-vs-professional-work" class="toc-link">DIY vs. Professional Work</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#safe-diy-projects" class="toc-link">Safe DIY Projects</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#leave-to-professionals" class="toc-link">Leave to Professionals</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#timeline-and-project-management" class="toc-link">Timeline and Project Management</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#typical-renovation-timeline" class="toc-link">Typical Renovation Timeline</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#money-saving-tips" class="toc-link">Money-Saving Tips</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#common-mistakes-to-avoid" class="toc-link">Common Mistakes to Avoid</a>
+        </li>
+      
+        
+        
+        
+      
+        
+      
+        
+      
+        <li class="toc-list-item toc-level-0">
+          <a href="#final-thoughts" class="toc-link">Final Thoughts</a>
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const tocHeader = document.getElementById('toc-header');
+    const tocContent = document.getElementById('toc-content');
+    const tocToggleIcon = document.getElementById('toc-toggle-icon');
+    
+    // Set initial state - collapsed
+    tocContent.style.display = 'none';
+    tocToggleIcon.classList.remove('feather-chevron-up');
+    tocToggleIcon.classList.add('feather-chevron-down');
+    
+    // Make the entire TOC header clickable, not just the toggle button
+    tocHeader.addEventListener('click', function(e) {
+      toggleToc();
+      e.stopPropagation(); // Prevent event from propagating
+    });
+    
+    // Function to toggle TOC visibility
+    function toggleToc() {
+      if (tocContent.style.display === 'none') {
+        tocContent.style.display = 'block';
+        tocToggleIcon.classList.remove('feather-chevron-down');
+        tocToggleIcon.classList.add('feather-chevron-up');
+      } else {
+        tocContent.style.display = 'none';
+        tocToggleIcon.classList.remove('feather-chevron-up');
+        tocToggleIcon.classList.add('feather-chevron-down');
+      }
+    }
+    
+    // Hide TOC when clicking outside
+    document.addEventListener('click', function(e) {
+      const container = document.getElementById('toc-container');
+      if (!container.contains(e.target) && tocContent.style.display === 'block') {
+        toggleToc();
+      }
+    });
+    
+    // Don't close the TOC when clicking a link inside it
+    tocContent.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent event from closing the TOC
+    });
+  });
+</script>
+
+    </div>
+    
+
+    <div class="post-content e-content" itemprop="articleBody">
+      
+      
+
+      <h1 id="kitchen-renovation-tips-transform-your-space-on-any-budget">Kitchen Renovation Tips: Transform Your Space on Any Budget</h1>
+
+<p>The kitchen is often called the heart of the home, and a well-planned renovation can dramatically improve both functionality and value. Whether you’re working with a modest budget or planning a complete overhaul, these tips will help you maximize your investment.</p>
+
+<h2 id="planning-your-kitchen-renovation">Planning Your Kitchen Renovation</h2>
+
+<h3 id="start-with-a-clear-vision">Start with a Clear Vision</h3>
+<p>Before making any purchases or changes, define what you want to achieve:</p>
+<ul>
+  <li>Improved functionality</li>
+  <li>Updated aesthetics</li>
+  <li>Better storage solutions</li>
+  <li>Enhanced entertaining space</li>
+</ul>
+
+<h3 id="set-a-realistic-budget">Set a Realistic Budget</h3>
+<p>Allocate your budget wisely:</p>
+<ul>
+  <li><strong>30-35%</strong>: Cabinets and hardware</li>
+  <li><strong>15-20%</strong>: Labor and installation</li>
+  <li><strong>15-20%</strong>: Appliances</li>
+  <li><strong>15-20%</strong>: Countertops</li>
+  <li><strong>5%</strong>: Flooring</li>
+  <li><strong>5%</strong>: Lighting</li>
+  <li><strong>10-15%</strong>: Contingency fund</li>
+</ul>
+
+<h2 id="budget-friendly-renovation-ideas">Budget-Friendly Renovation Ideas</h2>
+
+<h3 id="cabinet-makeover-options">Cabinet Makeover Options</h3>
+<p>Instead of replacing cabinets entirely:</p>
+<ul>
+  <li><strong>Paint existing cabinets</strong> for a fresh look</li>
+  <li><strong>Replace cabinet doors</strong> while keeping frames</li>
+  <li><strong>Add new hardware</strong> for instant modernization</li>
+  <li><strong>Install crown molding</strong> for a custom appearance</li>
+</ul>
+
+<h3 id="smart-appliance-upgrades">Smart Appliance Upgrades</h3>
+<ul>
+  <li>Look for energy-efficient models with rebates</li>
+  <li>Consider counter-depth refrigerators for a built-in look</li>
+  <li>Focus on the “work triangle” (sink, stove, refrigerator) efficiency</li>
+</ul>
+
+<h3 id="countertop-alternatives">Countertop Alternatives</h3>
+<ul>
+  <li><strong>Quartz</strong>: Durable and low-maintenance</li>
+  <li><strong>Butcher Block</strong>: Warm and budget-friendly</li>
+  <li><strong>Concrete</strong>: Industrial and customizable</li>
+  <li><strong>Laminate</strong>: Vast improvements in quality and appearance</li>
+</ul>
+
+<h2 id="mid-range-renovation-strategies">Mid-Range Renovation Strategies</h2>
+
+<h3 id="layout-improvements">Layout Improvements</h3>
+<ul>
+  <li><strong>Peninsula addition</strong>: Increases counter space without full island cost</li>
+  <li><strong>Remove upper cabinets</strong>: Create open shelving for modern look</li>
+  <li><strong>Expand doorways</strong>: Improve flow to adjacent rooms</li>
+</ul>
+
+<h3 id="lighting-design">Lighting Design</h3>
+<ul>
+  <li><strong>Under-cabinet LED strips</strong>: Task lighting that’s energy-efficient</li>
+  <li><strong>Pendant lights</strong>: Statement pieces over islands or peninsulas</li>
+  <li><strong>Recessed lighting</strong>: General illumination with dimmer controls</li>
+</ul>
+
+<h2 id="high-end-renovation-features">High-End Renovation Features</h2>
+
+<h3 id="premium-materials">Premium Materials</h3>
+<ul>
+  <li><strong>Natural stone countertops</strong>: Marble, granite, or quartzite</li>
+  <li><strong>Custom cabinetry</strong>: Perfectly fitted and high-quality materials</li>
+  <li><strong>Professional appliances</strong>: Restaurant-quality performance</li>
+</ul>
+
+<h3 id="luxury-additions">Luxury Additions</h3>
+<ul>
+  <li><strong>Kitchen island with seating</strong>: Central gathering space</li>
+  <li><strong>Walk-in pantry</strong>: Ultimate storage solution</li>
+  <li><strong>Built-in coffee station</strong>: Convenience for daily routines</li>
+</ul>
+
+<h2 id="diy-vs-professional-work">DIY vs. Professional Work</h2>
+
+<h3 id="safe-diy-projects">Safe DIY Projects</h3>
+<ul>
+  <li>Painting walls and cabinets</li>
+  <li>Installing new hardware</li>
+  <li>Basic tile backsplash</li>
+  <li>Light fixture replacement</li>
+</ul>
+
+<h3 id="leave-to-professionals">Leave to Professionals</h3>
+<ul>
+  <li>Electrical work</li>
+  <li>Plumbing modifications</li>
+  <li>Gas line work</li>
+  <li>Structural changes</li>
+</ul>
+
+<h2 id="timeline-and-project-management">Timeline and Project Management</h2>
+
+<h3 id="typical-renovation-timeline">Typical Renovation Timeline</h3>
+<ul>
+  <li><strong>Planning and permits</strong>: 2-4 weeks</li>
+  <li><strong>Demolition</strong>: 1-2 days</li>
+  <li><strong>Rough-in work</strong> (electrical, plumbing): 3-5 days</li>
+  <li><strong>Drywall and painting</strong>: 1 week</li>
+  <li><strong>Flooring installation</strong>: 2-3 days</li>
+  <li><strong>Cabinet installation</strong>: 2-3 days</li>
+  <li><strong>Countertop installation</strong>: 1 day</li>
+  <li><strong>Final details</strong>: 3-5 days</li>
+</ul>
+
+<h2 id="money-saving-tips">Money-Saving Tips</h2>
+
+<ol>
+  <li><strong>Keep the existing layout</strong> when possible</li>
+  <li><strong>Shop end-of-year sales</strong> for appliances</li>
+  <li><strong>Mix high and low-end materials</strong> strategically</li>
+  <li><strong>Reuse what you can</strong> (sinks, hardware, appliances in good condition)</li>
+  <li><strong>Get multiple quotes</strong> from contractors</li>
+</ol>
+
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+
+<ul>
+  <li>Inadequate planning and measurement</li>
+  <li>Choosing style over function</li>
+  <li>Insufficient electrical outlets</li>
+  <li>Poor ventilation planning</li>
+  <li>Ignoring the work triangle principle</li>
+</ul>
+
+<h2 id="final-thoughts">Final Thoughts</h2>
+
+<p>A successful kitchen renovation requires careful planning, realistic budgeting, and smart prioritization. Focus on elements that will provide the most impact for your investment, and don’t be afraid to phase the renovation if budget is a concern.</p>
+
+<p>Remember, the best kitchen renovation is one that meets your family’s specific needs while staying within your budget and timeline constraints.</p>
+
+<p><em>Pro tip: Always order 10-15% extra materials for tiles, flooring, and paint to account for waste and future repairs.</em></p>
+
+    </div>
+
+    <div class="post-meta">
+      <span class="post-date">
+        <i class="feather-calendar"></i>
+        <time class="dt-published" datetime="2025-01-05T14:30:00+00:00" itemprop="datePublished">
+          Jan 5, 2025
+        </time>
+      </span>
+
+      
+      <span class="post-author">
+        <i class="feather-user"></i>
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">Blog Author</span>
+        </span>
+      </span>
+      
+
+      
+
+
+  <span class="reading-time"><i data-feather="clock"></i> 2 min read</span>
+
+
+
+      
+      <span class="post-categories">
+        <i class="feather-folder"></i>
+        
+          <a href="/Blogi/category/renovation">renovation</a>, 
+        
+          <a href="/Blogi/category/kitchen">kitchen</a>
+        
+      </span>
+      
+    </div>
+
+    <div class="social-share">
+  <h4>Share this post</h4>
+  <div class="share-buttons">
+    <a href="https://facebook.com/sharer/sharer.php?u=http://0.0.0.0:5000/Blogi/kitchen-renovation-tips-any-budget/" target="_blank" rel="noopener" class="share-facebook" aria-label="Share on Facebook">
+      <i data-feather="facebook"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text=Kitchen%20Renovation%20Tips:%20Transform%20Your%20Space%20on%20Any%20Budget&url=http://0.0.0.0:5000/Blogi/kitchen-renovation-tips-any-budget/" target="_blank" rel="noopener" class="share-twitter" aria-label="Share on Twitter">
+      <i data-feather="twitter"></i>
+    </a>
+    <a href="https://pinterest.com/pin/create/button/?url=http://0.0.0.0:5000/Blogi/kitchen-renovation-tips-any-budget/&media=https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80&description=Kitchen%20Renovation%20Tips:%20Transform%20Your%20Space%20on%20Any%20Budget" target="_blank" rel="noopener" class="share-pinterest" aria-label="Share on Pinterest">
+      <i data-feather="image"></i>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://0.0.0.0:5000/Blogi/kitchen-renovation-tips-any-budget/&title=Kitchen%20Renovation%20Tips:%20Transform%20Your%20Space%20on%20Any%20Budget" target="_blank" rel="noopener" class="share-linkedin" aria-label="Share on LinkedIn">
+      <i data-feather="linkedin"></i>
+    </a>
+    <a href="mailto:?subject=Kitchen%20Renovation%20Tips:%20Transform%20Your%20Space%20on%20Any%20Budget&body=http://0.0.0.0:5000/Blogi/kitchen-renovation-tips-any-budget/" class="share-email" aria-label="Share via Email">
+      <i data-feather="mail"></i>
+    </a>
+  </div>
+</div>
+
+
+    
+    <div class="post-tags-section">
+      <span class="tags-title">Tags:</span>
+      
+        <a href="/Blogi/tag/kitchen" class="tag-button">kitchen</a>
+      
+        <a href="/Blogi/tag/renovation" class="tag-button">renovation</a>
+      
+        <a href="/Blogi/tag/budget" class="tag-button">budget</a>
+      
+        <a href="/Blogi/tag/diy" class="tag-button">diy</a>
+      
+        <a href="/Blogi/tag/home-improvement" class="tag-button">home-improvement</a>
+      
+    </div>
+    
+
+    
+    <div class="post-comments" id="disqus-container">
+      <h3>Comments</h3>
+      <div id="disqus_thread" data-disqus-shortname="your-disqus-shortname"></div>
+    </div>
+    
+
+    <div class="related-posts">
+  <h3>Related Articles</h3>
+  <div class="related-posts-grid">
+    
+    
+    
+    
+    
+      
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+      
+    
+      
+      
+      
+      
+      
+      
+    
+    
+    
+      
+        
+      
+        
+          <div class="related-post-card">
+            <a href="/Blogi/modern-home-design-inspiration-2025/">
+              
+
+
+
+
+<div class="responsive-image-container related-post-image"
+     data-title="Modern Home Design Inspiration for 2025">
+  <picture>
+    <img 
+      
+        
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+          class="responsive-image external-image"
+          onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');"
+        
+      
+      alt="Modern Home Design Inspiration for 2025" 
+      loading="lazy"
+      sizes="(max-width: 768px) 100vw, 50vw"
+    >
+  </picture>
+
+</div>
+            </a>
+            <div class="related-post-content">
+              <h4><a href="/Blogi/modern-home-design-inspiration-2025/">Modern Home Design Inspiration for 2025</a></h4>
+              <div class="related-post-meta">
+                <span class="post-date">04 Jan 2025</span>
+              </div>
+            </div>
+          </div>
+        
+      
+        
+          <div class="related-post-card">
+            <a href="/Blogi/customizing-your-blog/">
+              
+
+
+
+
+<div class="responsive-image-container related-post-image"
+     data-title="Customizing Your Blog">
+  <picture>
+    <img 
+      
+        
+          src="/Blogi/assets/img/default-post-image.svg"
+          class="responsive-image internal-image"
+          onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');"
+        
+      
+      alt="Customizing Your Blog" 
+      loading="lazy"
+      sizes="(max-width: 768px) 100vw, 50vw"
+    >
+  </picture>
+
+</div>
+            </a>
+            <div class="related-post-content">
+              <h4><a href="/Blogi/customizing-your-blog/">Customizing Your Blog</a></h4>
+              <div class="related-post-meta">
+                <span class="post-date">03 Jan 2025</span>
+              </div>
+            </div>
+          </div>
+        
+      
+    
+  </div>
+</div>
+  </article>
+</div>
+
+<div class="sidebar col-lg-4">
+  <div class="sidebar-widgets">
+  <div class="widget search-widget">
+    <div class="widget-content">
+      <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+    </div>
+  </div>
+  
+  
+    
+    <div class="widget popular-posts-widget">
+      <h4 class="widget-title">Popular Posts</h4>
+      <div class="widget-content">
+        <ul class="popular-posts-list">
+          
+            <li>
+              <a href="/Blogi/kitchen-renovation-tips-any-budget/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kitchen Renovation Tips: Transform Your Space on Any Budget" class="external-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Kitchen Renovation Tips: Transform Your Space on Any Budget</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/modern-home-design-inspiration-2025/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Home Design Inspiration for 2025" class="external-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Modern Home Design Inspiration for 2025</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/customizing-your-blog/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="/Blogi/assets/img/default-post-image.svg" alt="Customizing Your Blog" class="direct-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Customizing Your Blog</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/getting-started-with-jekyll/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="/Blogi/assets/img/default-post-image.svg" alt="Getting Started with Jekyll" class="direct-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Getting Started with Jekyll</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/welcome-to-my-blog/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="/Blogi/assets/img/default-post-image.svg" alt="Welcome to My Blog" class="direct-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Welcome to My Blog</h5>
+                </div>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+    <div class="widget categories-widget">
+      <h4 class="widget-title">Categories</h4>
+      <div class="widget-content">
+        <ul class="categories-list">
+          
+            <li>
+              <a href="/Blogi/category/blogging" class="category-item">
+                <span class="category-name">blogging</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/welcome" class="category-item">
+                <span class="category-name">welcome</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/jekyll" class="category-item">
+                <span class="category-name">jekyll</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/tutorial" class="category-item">
+                <span class="category-name">tutorial</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/customization" class="category-item">
+                <span class="category-name">customization</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/design" class="category-item">
+                <span class="category-name">design</span>
+                <span class="category-count">2</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/interior" class="category-item">
+                <span class="category-name">interior</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/renovation" class="category-item">
+                <span class="category-name">renovation</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/kitchen" class="category-item">
+                <span class="category-name">kitchen</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+  
+</div>
+
+</div>
+
+
+<script src="/Blogi/assets/js/disqus-loader.js"></script>
+
+
+        </div>
+      </div>
+    </main>
+    
+    <footer class="site-footer" style="transform: none; transition: none;">
+  <div class="container" style="transform: none;">
+    <div class="footer-border" style="border-top: 2px solid #dee2e6; margin-bottom: 2rem;"></div>
+    
+    <div class="footer-top" style="transform: none;">
+      <div class="row" style="transform: none;">
+        <div class="col-12 d-flex justify-content-center" style="transform: none;">
+          <div class="footer-menu d-flex flex-wrap justify-content-center" style="transform: none;">
+            <div class="footer-links" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem;">
+              <a href="/Blogi/about/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">About</a>
+              <a href="/Blogi/contact/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Contact</a>
+              <a href="/Blogi/disclaimer/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Disclaimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #e9ecef; margin-top: 2rem;">
+      <div class="copyright" style="transform: none;">
+        <p style="transform: none; margin: 0; color: #6c757d; font-size: 0.9rem;">&copy; 2025 My Blog Template. All rights reserved.</p>
+      </div>
+      
+      <div class="back-to-top">
+        <a href="#" id="back-to-top-btn" aria-label="Back to top" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #007bff; color: white; border-radius: 50%; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+          <i data-feather="chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+  });
+</script>
+
+  </div>
+
+  <!-- Popup ads disabled -->
+  
+  <!-- Core scripts loaded asynchronously -->
+  <script src="/Blogi/assets/js/main.js" async></script>
+  <script src="/Blogi/assets/js/dark-mode.js" async></script>
+  <script src="/Blogi/assets/js/image-loader.js" async></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    window.performance.mark('scriptsLoaded');
+    window.performance.measure('loadTime', 'pageStart', 'scriptsLoaded');
+    
+    // Report performance metrics
+    window.addEventListener('load', function() {
+      if (window.performance && window.performance.getEntriesByType) {
+        const loadTime = window.performance.getEntriesByType('navigation')[0].loadEventEnd - window.performance.getEntriesByType('navigation')[0].navigationStart;
+        console.log('Page load time: ' + loadTime + 'ms');
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>

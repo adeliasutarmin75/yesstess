@@ -1,0 +1,198 @@
+<div class="search-form">
+  <form action="{{ '/search/' | relative_url }}" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>

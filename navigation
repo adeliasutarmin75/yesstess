@@ -1,0 +1,33 @@
+
+- title: "Home"
+  url: "/"
+
+<!---- title: "Home Design"
+  url: "/category/home-design/"
+  submenu:
+    - title: "Home Design Ideas"
+      url: "/category/home-design/home-design-ideas/"
+    - title: "Modern Home Design"
+      url: "/category/home-design/modern-home-design/"
+    - title: "Small House Design"
+      url: "/category/home-design/small-house-design/"
+    - title: "Interior Design for Home"
+      url: "/category/home-design/interior-design-for-home/"
+    - title: "Minimalist Home Design"
+      url: "/category/home-design/minimalist-home-design/"
+    - title: "Home Decor Ideas"
+      url: "/category/home-design/home-decor-ideas/"
+    - title: "Living Room Design Inspiration"
+      url: "/category/home-design/living-room-design-inspiration/"
+    - title: "Kitchen Design Ideas"
+      url: "/category/home-design/kitchen-design-ideas/"
+    - title: "House Exterior Design"
+      url: "/category/home-design/house-exterior-design/"
+    - title: "Luxury Home Design Trends"
+      url: "/category/home-design/luxury-home-design-trends/"
+
+- title: "About"
+  url: "/about/"
+
+- title: "Contact"
+  url: "/contact/"

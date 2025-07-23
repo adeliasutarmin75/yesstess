@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Performance Optimization Scripts -->
+
+<!-- Critical CSS -->
+<style>
+/* Critical CSS for above-the-fold content */
+*{box-sizing:border-box}
+html{font-display:swap;scroll-behavior:smooth}
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;background-color:var(--bg-color);color:var(--text-color);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+.header{background:var(--card-bg);border-bottom:1px solid var(--border-color);position:sticky;top:0;z-index:1000}
+.navbar{padding:1rem 0}
+.container{max-width:1200px;margin:0 auto;padding:0 15px}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.post-card{background:var(--card-bg);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1);transition:transform .3s ease;contain:layout style paint;will-change:transform;transform:translateZ(0)}
+.post-card:hover{transform:translateY(-5px)}
+.post-card-image-wrapper{position:relative;width:100%;padding-top:56.25%;overflow:hidden;background-color:var(--card-bg)}
+.post-card-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.post-card-content{padding:1.5rem}
+.post-card-title{font-size:1.25rem;font-weight:600;margin-bottom:.5rem}
+.post-card-excerpt{color:var(--text-color-secondary);font-size:.95rem;line-height:1.6}
+.pagination-container{display:flex;justify-content:center;align-items:center;margin:3rem 0}
+.pagination-wrapper{display:flex;align-items:center;gap:2rem;background:var(--card-bg);border-radius:12px;padding:1rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.pagination-btn{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:all .3s ease;background:var(--link-color);color:white;contain:layout style paint;will-change:transform;transform:translateZ(0)}
+.pagination-btn:hover{transform:translateY(-3px)}
+img{max-width:100%;height:auto;display:block}
+img.lazy{opacity:0;transition:opacity .3s ease}
+img.loaded{opacity:1}
+@media(max-width:768px){body{font-size:16px}.post-grid{grid-template-columns:1fr;gap:1rem}.pagination-wrapper{flex-direction:column;gap:1rem}}
+</style>
+
+<!-- Preload key resources -->
+<link rel="preload" href="/Blogi/assets/css/main.css" as="style">
+<link rel="preload" href="/Blogi/assets/js/main.js" as="script">
+<link rel="preload" href="/Blogi/search.json" as="fetch" crossorigin>
+
+<!-- DNS prefetch for external resources -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<!-- DNS prefetch for ads removed -->
+
+<!-- Preconnect for faster loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Performance monitoring -->
+<script>
+// Performance timing
+window.performance = window.performance || {};
+window.performance.mark = window.performance.mark || function() {};
+window.performance.measure = window.performance.measure || function() {};
+window.performance.mark('pageStart');
+
+// Performance optimization initialization
+window.performance.mark('pageStart');
+
+// Lazy load non-critical resources
+window.addEventListener('load', function() {
+  window.performance.mark('pageLoaded');
+  
+  // Load non-critical CSS
+  const mainCSS = document.createElement('link');
+  mainCSS.rel = 'stylesheet';
+  mainCSS.href = '/Blogi/assets/css/main.css';
+  document.head.appendChild(mainCSS);
+  
+  // Load performance script
+  const perfScript = document.createElement('script');
+  perfScript.src = '/Blogi/assets/js/performance-boost.js';
+  perfScript.async = true;
+  document.body.appendChild(perfScript);
+});
+</script>
+
+<!-- Resource hints for better performance -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#007bff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<!-- Optimize for mobile performance -->
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- Prefetch important pages -->
+<link rel="prefetch" href="/Blogi/">
+<link rel="prefetch" href="/Blogi/search/">
+<link rel="prefetch" href="/Blogi/categories/">
+<link rel="prefetch" href="/Blogi/tags/">
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="base-url" content="/Blogi">
+
+
+  <meta http-equiv="X-Robots-Tag" content="index, follow" />
+
+
+  <title>Documentation | My Blog Template</title>
+  <meta property="og:title" content="Documentation" />
+  <meta name="twitter:title" content="Documentation" />
+
+
+
+  <meta name="description" content="A clean and modern blog template" />
+  <meta property="og:description" content="A clean and modern blog template" />
+  <meta name="twitter:description" content="A clean and modern blog template" />
+
+
+
+  <link rel="canonical" href="http://0.0.0.0:5000/documentation/" />
+  <meta property="og:url" content="http://0.0.0.0:5000/documentation/" />
+  <meta name="twitter:url" content="http://0.0.0.0:5000/documentation/" />
+
+
+
+  <meta property="og:image" content="http://0.0.0.0:5000/assets/img/default-post-image.svg" />
+  <meta name="twitter:image" content="http://0.0.0.0:5000/assets/img/default-post-image.svg" />
+
+
+
+  <meta property="og:type" content="website" />
+
+
+
+
+
+
+
+  <meta name="twitter:site" content="@myblog" />
+  <meta name="twitter:creator" content="@myblog" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+  <meta name="keywords" content="blog, template, jekyll, clean design, minimal" />
+
+
+<!-- HomeDesign Structured Data -->
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Early Hints -->
+<link rel="preload" href="/assets/css/styles.css" as="style">
+<link rel="preload" href="/assets/js/performance.js" as="script">
+
+<!-- Module Preload -->
+<link rel="modulepreload" href="/assets/js/modules/main.js">
+<link rel="stylesheet" href="/Blogi/assets/css/styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/logo-styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/lazy-loading.css">
+<link rel="stylesheet" href="/Blogi/assets/css/fix-vibration.css">
+<link rel="stylesheet" href="/Blogi/assets/css/image-styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/mobile-scroll-fix.css">
+<link rel="stylesheet" href="/Blogi/assets/css/footer-responsive.css">
+<link rel="stylesheet" href="/Blogi/assets/css/sidebar-images.css">
+<link rel="stylesheet" href="/Blogi/assets/css/image-optimization.css">
+
+<link rel="alternate" type="application/rss+xml" title="My Blog Template" href="/Blogi/feed.xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- Additional SEO-specific tags -->
+
+<!-- Performance Scripts -->
+<script src="/Blogi/assets/js/performance.js" defer></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="site-branding">
+        <a href="/Blogi/" class="site-logo">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-symbol">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span class="site-title">My Blog Template</span>
+        </a>
+      </div>
+      
+      <nav class="site-navigation">
+        <ul class="nav-menu">
+  
+    
+      <li><a href="/Blogi/">Home</a></li>
+    
+  
+    
+      <li><a href="/Blogi/about/">About</a></li>
+    
+  
+    
+      <li><a href="/Blogi/contact/">Contact</a></li>
+    
+  
+    
+      <li><a href="/Blogi/documentation/">Documentation</a></li>
+    
+  
+    
+      <li><a href="/Blogi/archive/">Archive</a></li>
+    
+  
+    
+      <li><a href="/Blogi/sitemap/">Sitemap</a></li>
+    
+  
+</ul>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="search-toggle">
+          <button id="search-toggle-btn" aria-label="Search">
+            <i data-feather="search"></i>
+          </button>
+        </div>
+        
+        <div class="dark-mode-toggle">
+          <div class="theme-toggle">
+  <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+    <i data-feather="sun" class="light-icon"></i>
+    <i data-feather="moon" class="dark-icon"></i>
+  </button>
+</div>
+
+        </div>
+        
+        <div class="mobile-menu-toggle d-lg-none">
+          <button id="menu-toggle-btn" aria-label="Menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="searchBox" class="search-box">
+      <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>
+    </div>
+  </div>
+  
+  <div id="mobileMenu" class="mobile-menu d-lg-none">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <div class="mobile-search">
+          <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>
+        </div>
+      </div>
+      <nav class="mobile-navigation">
+        <ul class="nav-menu">
+  
+    
+      <li><a href="/Blogi/">Home</a></li>
+    
+  
+    
+      <li><a href="/Blogi/about/">About</a></li>
+    
+  
+    
+      <li><a href="/Blogi/contact/">Contact</a></li>
+    
+  
+    
+      <li><a href="/Blogi/documentation/">Documentation</a></li>
+    
+  
+    
+      <li><a href="/Blogi/archive/">Archive</a></li>
+    
+  
+    
+      <li><a href="/Blogi/sitemap/">Sitemap</a></li>
+    
+  
+</ul>
+      </nav>
+    </div>
+  </div>
+  
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+</header>
+
+    
+    <main class="content" aria-label="Content">
+      <div class="container">
+        <!-- Header ads disabled -->
+        <div class="row">
+          <div class="page-container col-lg-8">
+  <div class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <a href="/Blogi/" itemprop="item">
+      <span itemprop="name">Home</span>
+    </a>
+    <meta itemprop="position" content="1" />
+  </span>
+  
+  
+  
+  <span class="breadcrumb-separator">/</span>
+  <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    <span itemprop="name">Documentation</span>
+    <meta itemprop="position" content="2" />
+  </span>
+</div>
+
+  
+  <article class="page">
+    <header class="page-header">
+      <h1 class="page-title">Documentation</h1>
+    </header>
+    
+    <div class="page-content">
+      <h1 id="dokumentasi-blog">Dokumentasi Blog</h1>
+
+<p>Selamat datang di pusat dokumentasi kami! Halaman ini menyediakan panduan lengkap tentang cara menggunakan tema, plugin, dan fitur-fitur blog kami.</p>
+
+<h2 id="panduan-pengguna">Panduan Pengguna</h2>
+
+<h3 id="tema--template">Tema &amp; Template</h3>
+
+<h4 id="instalasi-tema">Instalasi Tema</h4>
+
+<p>Berikut langkah-langkah menginstal tema pada berbagai platform:</p>
+
+<h5 id="wordpress">WordPress</h5>
+<ol>
+  <li>Login ke dashboard WordPress Anda</li>
+  <li>Navigasi ke Appearance &gt; Themes &gt; Add New &gt; Upload Theme</li>
+  <li>Pilih file .zip tema yang telah Anda beli</li>
+  <li>Klik “Install Now” dan kemudian “Activate”</li>
+  <li>Sesuaikan pengaturan tema melalui Customizer</li>
+</ol>
+
+<h5 id="blogger">Blogger</h5>
+<ol>
+  <li>Login ke dashboard Blogger Anda</li>
+  <li>Navigasi ke Theme &gt; Edit HTML</li>
+  <li>Backup template Anda terlebih dahulu</li>
+  <li>Hapus semua kode yang ada</li>
+  <li>Salin dan tempel kode template baru</li>
+  <li>Klik “Save theme”</li>
+</ol>
+
+<h5 id="jekyll">Jekyll</h5>
+<ol>
+  <li>Download tema Jekyll dari repository</li>
+  <li>Salin folder tema ke direktori proyek Jekyll Anda</li>
+  <li>Sesuaikan file _config.yml</li>
+  <li>Jalankan <code>bundle install</code> dan <code>bundle exec jekyll serve</code></li>
+</ol>
+
+<h4 id="kustomisasi-tema">Kustomisasi Tema</h4>
+
+<ul>
+  <li><strong>Logo &amp; Branding</strong>: Panduan mengganti logo dan elemen branding</li>
+  <li><strong>Warna &amp; Font</strong>: Cara menyesuaikan skema warna dan tipografi</li>
+  <li><strong>Layout</strong>: Opsi untuk mengubah tata letak halaman dan widget</li>
+  <li><strong>Header &amp; Footer</strong>: Kustomisasi area header dan footer</li>
+</ul>
+
+<h3 id="plugin--extension">Plugin &amp; Extension</h3>
+
+<h4 id="instalasi-plugin">Instalasi Plugin</h4>
+
+<ol>
+  <li>Download file plugin dari area member</li>
+  <li>Upload ke direktori plugin platform Anda</li>
+  <li>Aktifkan plugin dari dashboard</li>
+  <li>Konfigurasikan pengaturan sesuai kebutuhan</li>
+</ol>
+
+<h4 id="pengaturan-plugin">Pengaturan Plugin</h4>
+
+<p>Panduan detail untuk mengkonfigurasi setiap plugin:</p>
+
+<ul>
+  <li><strong>SEO Tools</strong>: Pengaturan meta tag, sitemap, dan optimasi search engine</li>
+  <li><strong>Social Media</strong>: Mengintegrasikan sosial media dan fitur sharing</li>
+  <li><strong>Performance</strong>: Mengoptimalkan caching dan kompresi</li>
+  <li><strong>Analytics</strong>: Melacak pengunjung dan interaksi pengguna</li>
+</ul>
+
+<h2 id="tutorial-blogging">Tutorial Blogging</h2>
+
+<h3 id="mulai-blogging">Mulai Blogging</h3>
+
+<ul>
+  <li><strong>Memilih Niche</strong>: Panduan menemukan topik yang tepat untuk blog Anda</li>
+  <li><strong>Content Strategy</strong>: Merencanakan konten yang efektif</li>
+  <li><strong>SEO Dasar</strong>: Konsep dasar optimasi mesin pencari</li>
+  <li><strong>Penulisan Post</strong>: Teknik menulis artikel blog yang menarik</li>
+</ul>
+
+<h3 id="monetisasi-blog">Monetisasi Blog</h3>
+
+<ul>
+  <li><strong>Google AdSense</strong>: Cara memasang dan mengoptimalkan iklan</li>
+  <li><strong>Affiliate Marketing</strong>: Strategi promosi produk afiliasi</li>
+  <li><strong>Digital Products</strong>: Menjual produk digital melalui blog</li>
+  <li><strong>Sponsored Posts</strong>: Mendapatkan kerjasama dengan brand</li>
+</ul>
+
+<h3 id="engagement--growth">Engagement &amp; Growth</h3>
+
+<ul>
+  <li><strong>Email Marketing</strong>: Membangun daftar email dan newsletter</li>
+  <li><strong>Social Media</strong>: Strategi promosi di platform sosial media</li>
+  <li><strong>Community Building</strong>: Membangun komunitas di sekitar blog</li>
+  <li><strong>Analytics</strong>: Menganalisis data untuk pertumbuhan</li>
+</ul>
+
+<h2 id="faq">FAQ</h2>
+
+<h3 id="pertanyaan-umum">Pertanyaan Umum</h3>
+
+<details>
+<summary>Bagaimana cara menggunakan tema yang saya beli?</summary>
+<p>Anda akan menerima email dengan file tema dan panduan instalasi setelah pembelian berhasil. Ikuti panduan instalasi sesuai platform blog Anda.</p>
+</details>
+
+<details>
+<summary>Apakah tema dan plugin kompatibel dengan versi terbaru platform?</summary>
+<p>Ya, kami secara rutin memperbarui produk kami untuk memastikan kompatibilitas dengan versi terbaru dari semua platform yang didukung.</p>
+</details>
+
+<details>
+<summary>Bagaimana cara mendapatkan bantuan jika saya mengalami masalah?</summary>
+<p>Anda dapat menghubungi kami melalui halaman <a href="/contact/">kontak</a> atau email dukungan yang tercantum di email pembelian Anda.</p>
+</details>
+
+<details>
+<summary>Apakah ada diskon untuk pembelian beberapa produk?</summary>
+<p>Ya, kami menawarkan paket bundling dan diskon untuk pembelian beberapa tema atau plugin sekaligus. Hubungi kami untuk penawaran khusus.</p>
+</details>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="/blog/">Blog</a> - Artikel dan tutorial terbaru</li>
+  <li><a href="/about/">About</a> - Tentang kami</li>
+  <li><a href="/contact/">Contact</a> - Hubungi tim dukungan</li>
+</ul>
+
+<hr />
+
+<p>Jika Anda tidak menemukan informasi yang Anda cari, jangan ragu untuk <a href="/contact/">menghubungi kami</a> untuk bantuan lebih lanjut.</p>
+
+    </div>
+  </article>
+</div>
+
+<div class="sidebar col-lg-4">
+  <div class="sidebar-widgets">
+  <div class="widget search-widget">
+    <div class="widget-content">
+      <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+    </div>
+  </div>
+  
+  
+    
+    <div class="widget popular-posts-widget">
+      <h4 class="widget-title">Popular Posts</h4>
+      <div class="widget-content">
+        <ul class="popular-posts-list">
+          
+            <li>
+              <a href="/Blogi/kitchen-renovation-tips-any-budget/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Kitchen Renovation Tips: Transform Your Space on Any Budget" class="external-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Kitchen Renovation Tips: Transform Your Space on Any Budget</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/modern-home-design-inspiration-2025/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Modern Home Design Inspiration for 2025" class="external-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Modern Home Design Inspiration for 2025</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/customizing-your-blog/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="/Blogi/assets/img/default-post-image.svg" alt="Customizing Your Blog" class="direct-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Customizing Your Blog</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/getting-started-with-jekyll/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="/Blogi/assets/img/default-post-image.svg" alt="Getting Started with Jekyll" class="direct-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Getting Started with Jekyll</h5>
+                </div>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/welcome-to-my-blog/" class="popular-post-item">
+                <div class="post-thumbnail">
+                  
+                    
+                      <img src="/Blogi/assets/img/default-post-image.svg" alt="Welcome to My Blog" class="direct-image" loading="lazy" onerror="this.onerror=null;this.src='/Blogi/assets/img/default-post-image.svg';this.classList.add('image-fallback');">
+                    
+                  
+                </div>
+                <div class="post-info">
+                  <h5 class="post-title">Welcome to My Blog</h5>
+                </div>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+    <div class="widget categories-widget">
+      <h4 class="widget-title">Categories</h4>
+      <div class="widget-content">
+        <ul class="categories-list">
+          
+            <li>
+              <a href="/Blogi/category/blogging" class="category-item">
+                <span class="category-name">blogging</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/welcome" class="category-item">
+                <span class="category-name">welcome</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/jekyll" class="category-item">
+                <span class="category-name">jekyll</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/tutorial" class="category-item">
+                <span class="category-name">tutorial</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/customization" class="category-item">
+                <span class="category-name">customization</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/design" class="category-item">
+                <span class="category-name">design</span>
+                <span class="category-count">2</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/interior" class="category-item">
+                <span class="category-name">interior</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/renovation" class="category-item">
+                <span class="category-name">renovation</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+            <li>
+              <a href="/Blogi/category/kitchen" class="category-item">
+                <span class="category-name">kitchen</span>
+                <span class="category-count">1</span>
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    
+    
+    
+    
+    
+  
+</div>
+
+</div>
+
+        </div>
+      </div>
+    </main>
+    
+    <footer class="site-footer" style="transform: none; transition: none;">
+  <div class="container" style="transform: none;">
+    <div class="footer-border" style="border-top: 2px solid #dee2e6; margin-bottom: 2rem;"></div>
+    
+    <div class="footer-top" style="transform: none;">
+      <div class="row" style="transform: none;">
+        <div class="col-12 d-flex justify-content-center" style="transform: none;">
+          <div class="footer-menu d-flex flex-wrap justify-content-center" style="transform: none;">
+            <div class="footer-links" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem;">
+              <a href="/Blogi/about/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">About</a>
+              <a href="/Blogi/contact/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Contact</a>
+              <a href="/Blogi/disclaimer/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Disclaimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #e9ecef; margin-top: 2rem;">
+      <div class="copyright" style="transform: none;">
+        <p style="transform: none; margin: 0; color: #6c757d; font-size: 0.9rem;">&copy; 2025 My Blog Template. All rights reserved.</p>
+      </div>
+      
+      <div class="back-to-top">
+        <a href="#" id="back-to-top-btn" aria-label="Back to top" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #007bff; color: white; border-radius: 50%; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+          <i data-feather="chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+  });
+</script>
+
+  </div>
+
+  <!-- Popup ads disabled -->
+  
+  <!-- Core scripts loaded asynchronously -->
+  <script src="/Blogi/assets/js/main.js" async></script>
+  <script src="/Blogi/assets/js/dark-mode.js" async></script>
+  <script src="/Blogi/assets/js/image-loader.js" async></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    window.performance.mark('scriptsLoaded');
+    window.performance.measure('loadTime', 'pageStart', 'scriptsLoaded');
+    
+    // Report performance metrics
+    window.addEventListener('load', function() {
+      if (window.performance && window.performance.getEntriesByType) {
+        const loadTime = window.performance.getEntriesByType('navigation')[0].loadEventEnd - window.performance.getEntriesByType('navigation')[0].navigationStart;
+        console.log('Page load time: ' + loadTime + 'ms');
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>

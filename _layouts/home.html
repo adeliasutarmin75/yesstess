@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<div class="home-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="main-content">
+          <div class="latest-posts">
+            <!-- Removed intro text as requested -->
+            
+            <div class="posts-grid-container">
+              <div class="posts-grid">
+                {% for post in paginator.posts %}
+                  <div class="post-grid-item">
+                    {% include post-card.html post=post %}
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+            
+            {% include pagination.html %}
+          </div>
+          
+          {{ content }}
+        </div>
+      </div>
+      
+      <div class="col-lg-3">
+        <div class="sidebar">
+          {% include sidebar.html %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

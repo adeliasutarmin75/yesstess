@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!-- Performance Optimization Scripts -->
+
+<!-- Critical CSS -->
+<style>
+/* Critical CSS for above-the-fold content */
+*{box-sizing:border-box}
+html{font-display:swap;scroll-behavior:smooth}
+body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;background-color:var(--bg-color);color:var(--text-color);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+.header{background:var(--card-bg);border-bottom:1px solid var(--border-color);position:sticky;top:0;z-index:1000}
+.navbar{padding:1rem 0}
+.container{max-width:1200px;margin:0 auto;padding:0 15px}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+.post-card{background:var(--card-bg);border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1);transition:transform .3s ease;contain:layout style paint;will-change:transform;transform:translateZ(0)}
+.post-card:hover{transform:translateY(-5px)}
+.post-card-image-wrapper{position:relative;width:100%;padding-top:56.25%;overflow:hidden;background-color:var(--card-bg)}
+.post-card-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}
+.post-card-content{padding:1.5rem}
+.post-card-title{font-size:1.25rem;font-weight:600;margin-bottom:.5rem}
+.post-card-excerpt{color:var(--text-color-secondary);font-size:.95rem;line-height:1.6}
+.pagination-container{display:flex;justify-content:center;align-items:center;margin:3rem 0}
+.pagination-wrapper{display:flex;align-items:center;gap:2rem;background:var(--card-bg);border-radius:12px;padding:1rem 2rem;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.pagination-btn{display:flex;align-items:center;gap:.5rem;padding:.75rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:all .3s ease;background:var(--link-color);color:white;contain:layout style paint;will-change:transform;transform:translateZ(0)}
+.pagination-btn:hover{transform:translateY(-3px)}
+img{max-width:100%;height:auto;display:block}
+img.lazy{opacity:0;transition:opacity .3s ease}
+img.loaded{opacity:1}
+@media(max-width:768px){body{font-size:16px}.post-grid{grid-template-columns:1fr;gap:1rem}.pagination-wrapper{flex-direction:column;gap:1rem}}
+</style>
+
+<!-- Preload key resources -->
+<link rel="preload" href="/Blogi/assets/css/main.css" as="style">
+<link rel="preload" href="/Blogi/assets/js/main.js" as="script">
+<link rel="preload" href="/Blogi/search.json" as="fetch" crossorigin>
+
+<!-- DNS prefetch for external resources -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//fonts.gstatic.com">
+<!-- DNS prefetch for ads removed -->
+
+<!-- Preconnect for faster loading -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Performance monitoring -->
+<script>
+// Performance timing
+window.performance = window.performance || {};
+window.performance.mark = window.performance.mark || function() {};
+window.performance.measure = window.performance.measure || function() {};
+window.performance.mark('pageStart');
+
+// Performance optimization initialization
+window.performance.mark('pageStart');
+
+// Lazy load non-critical resources
+window.addEventListener('load', function() {
+  window.performance.mark('pageLoaded');
+  
+  // Load non-critical CSS
+  const mainCSS = document.createElement('link');
+  mainCSS.rel = 'stylesheet';
+  mainCSS.href = '/Blogi/assets/css/main.css';
+  document.head.appendChild(mainCSS);
+  
+  // Load performance script
+  const perfScript = document.createElement('script');
+  perfScript.src = '/Blogi/assets/js/performance-boost.js';
+  perfScript.async = true;
+  document.body.appendChild(perfScript);
+});
+</script>
+
+<!-- Resource hints for better performance -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#007bff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<!-- Optimize for mobile performance -->
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- Prefetch important pages -->
+<link rel="prefetch" href="/Blogi/">
+<link rel="prefetch" href="/Blogi/search/">
+<link rel="prefetch" href="/Blogi/categories/">
+<link rel="prefetch" href="/Blogi/tags/">
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="base-url" content="/Blogi">
+
+
+  <meta http-equiv="X-Robots-Tag" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+
+  <title>tutorial | My Blog Template</title>
+  <meta property="og:title" content="tutorial" />
+  <meta name="twitter:title" content="tutorial" />
+
+
+
+  <meta name="description" content="A clean and modern blog template" />
+  <meta property="og:description" content="A clean and modern blog template" />
+  <meta name="twitter:description" content="A clean and modern blog template" />
+
+
+
+  <link rel="canonical" href="http://0.0.0.0:5000/category/tutorial/" />
+  <meta property="og:url" content="http://0.0.0.0:5000/category/tutorial/" />
+  <meta name="twitter:url" content="http://0.0.0.0:5000/category/tutorial/" />
+
+
+
+  <meta property="og:image" content="http://0.0.0.0:5000/assets/img/default-post-image.svg" />
+  <meta name="twitter:image" content="http://0.0.0.0:5000/assets/img/default-post-image.svg" />
+
+
+
+  <meta property="og:type" content="website" />
+
+
+
+
+
+
+
+  <meta name="twitter:site" content="@myblog" />
+  <meta name="twitter:creator" content="@myblog" />
+
+
+<meta name="twitter:card" content="summary_large_image" />
+
+
+  <meta name="keywords" content="blog, template, jekyll, clean design, minimal" />
+
+
+<!-- HomeDesign Structured Data -->
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Early Hints -->
+<link rel="preload" href="/assets/css/styles.css" as="style">
+<link rel="preload" href="/assets/js/performance.js" as="script">
+
+<!-- Module Preload -->
+<link rel="modulepreload" href="/assets/js/modules/main.js">
+<link rel="stylesheet" href="/Blogi/assets/css/styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/logo-styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/lazy-loading.css">
+<link rel="stylesheet" href="/Blogi/assets/css/fix-vibration.css">
+<link rel="stylesheet" href="/Blogi/assets/css/image-styles.css">
+<link rel="stylesheet" href="/Blogi/assets/css/mobile-scroll-fix.css">
+<link rel="stylesheet" href="/Blogi/assets/css/footer-responsive.css">
+<link rel="stylesheet" href="/Blogi/assets/css/sidebar-images.css">
+<link rel="stylesheet" href="/Blogi/assets/css/image-optimization.css">
+
+<link rel="alternate" type="application/rss+xml" title="My Blog Template" href="/Blogi/feed.xml">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+
+<!-- Additional SEO-specific tags -->
+
+<!-- Performance Scripts -->
+<script src="/Blogi/assets/js/performance.js" defer></script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <div class="site-branding">
+        <a href="/Blogi/" class="site-logo">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-symbol">
+            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+          <span class="site-title">My Blog Template</span>
+        </a>
+      </div>
+      
+      <nav class="site-navigation">
+        <ul class="nav-menu">
+  
+    
+      <li><a href="/Blogi/">Home</a></li>
+    
+  
+    
+      <li><a href="/Blogi/about/">About</a></li>
+    
+  
+    
+      <li><a href="/Blogi/contact/">Contact</a></li>
+    
+  
+    
+      <li><a href="/Blogi/documentation/">Documentation</a></li>
+    
+  
+    
+      <li><a href="/Blogi/archive/">Archive</a></li>
+    
+  
+    
+      <li><a href="/Blogi/sitemap/">Sitemap</a></li>
+    
+  
+</ul>
+      </nav>
+      
+      <div class="header-actions">
+        <div class="search-toggle">
+          <button id="search-toggle-btn" aria-label="Search">
+            <i data-feather="search"></i>
+          </button>
+        </div>
+        
+        <div class="dark-mode-toggle">
+          <div class="theme-toggle">
+  <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+    <i data-feather="sun" class="light-icon"></i>
+    <i data-feather="moon" class="dark-icon"></i>
+  </button>
+</div>
+
+        </div>
+        
+        <div class="mobile-menu-toggle d-lg-none">
+          <button id="menu-toggle-btn" aria-label="Menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div id="searchBox" class="search-box">
+      <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>
+    </div>
+  </div>
+  
+  <div id="mobileMenu" class="mobile-menu d-lg-none">
+    <div class="mobile-menu-inner">
+      <div class="mobile-menu-header">
+        <div class="mobile-search">
+          <div class="search-form">
+  <form action="/Blogi/search/" method="get" role="search" id="live-search-form">
+    <div class="input-group">
+      <input type="search" name="q" id="live-search-input" class="form-control" placeholder="Search..." aria-label="Search" autocomplete="off">
+      <button type="submit" class="search-btn" id="live-search-submit-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+    </div>
+  </form>
+  <div id="live-search-results" class="live-search-results"></div>
+</div>
+<script>
+// Live search functionality for header navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const searchForm = document.getElementById('live-search-form');
+  const searchInput = document.getElementById('live-search-input');
+  const searchSubmitBtn = document.getElementById('live-search-submit-btn');
+  const liveSearchResults = document.getElementById('live-search-results');
+  let searchIndex = [];
+  
+  if (searchForm && searchInput) {
+    console.log('Live search form component loaded');
+    
+    // Add direct click handler to search button
+    if (searchSubmitBtn) {
+      searchSubmitBtn.addEventListener('click', function(e) {
+        if (searchInput.value.trim().length < 2) {
+          e.preventDefault();
+          console.log('Live search prevented - query too short');
+          searchInput.focus();
+          return false;
+        }
+      });
+    }
+    
+    // Get base URL for proper path resolution
+    function getBaseUrl() {
+      const metaBaseUrl = document.querySelector('meta[name="base-url"]');
+      if (metaBaseUrl) {
+        return metaBaseUrl.content;
+      }
+      
+      // Try to get from site config or detect from current path
+      const path = window.location.pathname;
+      const segments = path.split('/').filter(s => s);
+      
+      // If we're in a subdirectory like /Blogi/, use that as base
+      if (segments.length > 0 && !segments[0].includes('.') && segments[0] !== 'search') {
+        return '/' + segments[0];
+      }
+      
+      return '';
+    }
+    
+    // Load search index for live search
+    const baseUrl = getBaseUrl();
+    const searchJsonUrl = baseUrl + '/search.json';
+    
+    console.log('Loading search data from:', searchJsonUrl);
+    
+    fetch(searchJsonUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => {
+        if (Array.isArray(data)) {
+          console.log('Live search data loaded successfully:', data.length, 'items');
+          searchIndex = data;
+        } else {
+          console.error('Search data is not an array:', data);
+          searchIndex = [];
+        }
+        
+        // Set up live search functionality
+        searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Hide live search results if query is empty
+          if (query.length < 1) {
+            if (liveSearchResults) {
+              liveSearchResults.innerHTML = '';
+              liveSearchResults.style.display = 'none';
+              liveSearchResults.classList.remove('active');
+            }
+            return;
+          }
+          
+          // Filter only by title, categories, tags, and image for live search
+          const results = searchIndex.filter(item => {
+            const titleMatch = item.title && item.title.toLowerCase().includes(query);
+            const tagsMatch = item.tags && Array.isArray(item.tags) && 
+                             item.tags.some(tag => tag.toLowerCase().includes(query));
+            const categoryMatch = item.categories && Array.isArray(item.categories) && 
+                                 item.categories.some(category => category.toLowerCase().includes(query));
+            
+            return titleMatch || tagsMatch || categoryMatch;
+          }).slice(0, 5); // Limit live search results to 5 items
+          
+          // Display live search results
+          if (liveSearchResults) {
+            if (results.length === 0) {
+              liveSearchResults.innerHTML = `<div class="no-live-results"><p>No results found for "${query}"</p></div>`;
+              liveSearchResults.style.display = 'block';
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            } else {
+              let html = '<ul class="live-search-list">';
+              
+              results.forEach(result => {
+                // Ensure proper URL formatting with base URL
+                let resultUrl = result.url;
+                if (!resultUrl.startsWith('http')) {
+                  if (!resultUrl.startsWith('/')) {
+                    resultUrl = '/' + resultUrl;
+                  }
+                  if (baseUrl && !resultUrl.startsWith(baseUrl)) {
+                    resultUrl = baseUrl + resultUrl;
+                  }
+                }
+                
+                const imageHtml = result.image ? 
+                  `<div class="live-result-image">
+                    <img src="${result.image.startsWith('http') ? result.image : baseUrl + result.image}" 
+                         alt="${result.title}" loading="lazy" 
+                         onerror="this.style.display='none'">
+                   </div>` : '';
+                
+                html += `
+                  <li class="live-search-item">
+                    <a href="${resultUrl}">
+                      ${imageHtml}
+                      <div class="live-result-content">
+                        <span class="live-search-title">${result.title}</span>
+                        <span class="live-search-category">${result.categories && result.categories.length > 0 ? result.categories[0] : ''}</span>
+                      </div>
+                    </a>
+                  </li>
+                `;
+              });
+              
+              // Add "view all results" link if there are results
+              if (query.length >= 2) {
+                const searchUrl = baseUrl + '/search/?q=' + encodeURIComponent(query);
+                html += `
+                  <li class="live-search-more">
+                    <a href="${searchUrl}">View all results for "${query}"</a>
+                  </li>
+                `;
+              }
+              
+              html += '</ul>';
+              
+              liveSearchResults.innerHTML = html;
+              liveSearchResults.style.display = 'block';
+              
+              // Trigger animation after a tiny delay to ensure display:block has been applied
+              setTimeout(() => {
+                liveSearchResults.classList.add('active');
+              }, 10);
+            }
+          }
+        });
+        
+        // Hide live search results when clicking outside
+        document.addEventListener('click', function(e) {
+          if (liveSearchResults && !searchInput.contains(e.target) && 
+              !liveSearchResults.contains(e.target) && !searchForm.contains(e.target)) {
+            // Animate the fade out
+            liveSearchResults.classList.remove('active');
+            
+            // Hide after transition completes
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+          }
+        });
+        
+        // Hide when pressing Escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && liveSearchResults && liveSearchResults.style.display === 'block') {
+            liveSearchResults.classList.remove('active');
+            setTimeout(() => {
+              liveSearchResults.style.display = 'none';
+            }, 200);
+            searchInput.blur();
+          }
+        });
+      })
+      .catch(error => {
+        console.error('Error loading search data:', error);
+      });
+  }
+});
+</script>
+        </div>
+      </div>
+      <nav class="mobile-navigation">
+        <ul class="nav-menu">
+  
+    
+      <li><a href="/Blogi/">Home</a></li>
+    
+  
+    
+      <li><a href="/Blogi/about/">About</a></li>
+    
+  
+    
+      <li><a href="/Blogi/contact/">Contact</a></li>
+    
+  
+    
+      <li><a href="/Blogi/documentation/">Documentation</a></li>
+    
+  
+    
+      <li><a href="/Blogi/archive/">Archive</a></li>
+    
+  
+    
+      <li><a href="/Blogi/sitemap/">Sitemap</a></li>
+    
+  
+</ul>
+      </nav>
+    </div>
+  </div>
+  
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay"></div>
+</header>
+
+    
+    <main class="content" aria-label="Content">
+      <div class="container">
+        <!-- Header ads disabled -->
+        <div class="row">
+          <div class="container mt-4">
+  <div class="category-header mb-4">
+    <h1 class="category-title mb-3"><i class="fas fa-folder-open me-2"></i>tutorial</h1>
+    
+    <!-- Category Navigation Menu -->
+    <div class="category-navigation">
+      <div class="category-menu mb-4">
+        
+          
+          
+          
+          <a href="/category/blogging/" class="category-button ">
+            blogging
+          </a>
+        
+          
+          
+          
+          <a href="/category/welcome/" class="category-button ">
+            welcome
+          </a>
+        
+          
+          
+          
+          <a href="/category/jekyll/" class="category-button ">
+            jekyll
+          </a>
+        
+          
+          
+          
+          <a href="/category/tutorial/" class="category-button active">
+            tutorial
+          </a>
+        
+          
+          
+          
+          <a href="/category/customization/" class="category-button ">
+            customization
+          </a>
+        
+          
+          
+          
+          <a href="/category/design/" class="category-button ">
+            design
+          </a>
+        
+          
+          
+          
+          <a href="/category/interior/" class="category-button ">
+            interior
+          </a>
+        
+          
+          
+          
+          <a href="/category/renovation/" class="category-button ">
+            renovation
+          </a>
+        
+          
+          
+          
+          <a href="/category/kitchen/" class="category-button ">
+            kitchen
+          </a>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Grid - Similar to homepage -->
+  <div class="post-grid-container">
+    <div class="row g-4">
+      
+      
+      
+      
+        
+      
+        
+      
+        
+      
+        
+          
+          <div class="col-md-6 col-lg-4 post-grid-item">
+            <article class="post-card h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="post-card-inner">
+    <a href="/Blogi/getting-started-with-jekyll/" class="post-card-image-link u-url" itemprop="url">
+      
+        <div class="responsive-image-container post-card-image-wrapper" data-title="Getting Started with Jekyll">
+          <picture>
+            <img 
+              src="/Blogi/assets/img/default-post-image.svg" 
+              alt="Getting Started with Jekyll" 
+              class="responsive-image post-card-image" 
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+              data-error-handled="true"
+              onerror="this.src='/assets/img/default-post-image.svg'">
+          </picture>
+        </div>
+      
+      
+      
+      <div class="post-card-categories">
+        
+        <span class="post-card-category p-category" itemprop="keywords">jekyll</span>
+        
+      </div>
+      
+    </a>
+    
+    <div class="post-card-content">
+      <h3 class="post-card-title p-name" itemprop="headline">
+        <a href="/Blogi/getting-started-with-jekyll/" class="u-url">Getting Started with Jekyll</a>
+      </h3>
+      
+      <div class="post-excerpt p-summary" itemprop="description">
+        
+          Learn the basics of Jekyll static site generator.
+        
+      </div>
+      
+      <div class="post-readmore">
+        <a href="/Blogi/getting-started-with-jekyll/" class="btn-readmore" aria-label="Read article Getting Started with Jekyll">
+          Read More <i class="icon fa fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+          </div>
+        
+      
+        
+      
+    </div>
+    
+    
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Category search functionality
+    const searchInput = document.getElementById('category-search');
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const postItems = document.querySelectorAll('.post-grid-item');
+        
+        postItems.forEach(item => {
+          const title = item.querySelector('.card-title').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            item.style.display = '';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    }
+    
+    // Filter buttons functionality
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    if (filterButtons.length) {
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Toggle active class
+          document.querySelector('[data-filter].active').classList.remove('active');
+          this.classList.add('active');
+          
+          const filter = this.getAttribute('data-filter');
+          const postItems = document.querySelectorAll('.post-grid-item');
+          
+          // Apply filter logic based on filter type
+          if (filter === 'all') {
+            postItems.forEach(item => item.style.display = '');
+          } else if (filter === 'newest') {
+            // This is simplified - in a real implementation we'd sort by date
+            const posts = Array.from(postItems);
+            posts.sort((a, b) => {
+              // Add actual sorting logic based on post dates
+              return 0; // Placeholder for actual comparison
+            });
+            
+            // Reorder in DOM
+            const parent = posts[0].parentNode;
+            posts.forEach(post => parent.appendChild(post));
+          }
+          // Add logic for 'popular' filter
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Category Header Styles */
+  .category-header {
+    background-color: var(--widget-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .category-title {
+    font-size: 1.75rem;
+    color: var(--heading-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+  
+  .category-title i {
+    color: #0d6efd;
+    margin-right: 0.75rem;
+  }
+  
+  /* Category Menu Styles */
+  .category-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.25rem;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.25rem;
+  }
+  
+  .category-button {
+    display: inline-block;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    min-width: 120px;
+    text-align: center;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+  }
+  
+  .category-button:hover,
+  .category-button.active {
+    background-color: #0d6efd;
+    color: white;
+    transform: translateY(-3px);
+    border-color: #0d6efd;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+  }
+
+  /* Post Grid Container */
+  .post-grid-container {
+    margin-bottom: 2rem;
+  }
+  
+  .post-grid-item {
+    transition: transform 0.3s ease;
+  }
+  
+  .post-grid-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .no-posts-message {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--widget-bg);
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 991px) {
+    .post-grid-item {
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .category-menu {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      padding-bottom: 0.75rem;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    
+    .category-menu::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Edge */
+    }
+    
+    .post-grid-item {
+      margin-bottom: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .category-header {
+      padding: 1.25rem;
+    }
+    
+    .category-title {
+      font-size: 1.5rem;
+    }
+    
+    .category-button {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.8rem;
+      min-width: auto;
+    }
+  }
+</style>
+        </div>
+      </div>
+    </main>
+    
+    <footer class="site-footer" style="transform: none; transition: none;">
+  <div class="container" style="transform: none;">
+    <div class="footer-border" style="border-top: 2px solid #dee2e6; margin-bottom: 2rem;"></div>
+    
+    <div class="footer-top" style="transform: none;">
+      <div class="row" style="transform: none;">
+        <div class="col-12 d-flex justify-content-center" style="transform: none;">
+          <div class="footer-menu d-flex flex-wrap justify-content-center" style="transform: none;">
+            <div class="footer-links" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem;">
+              <a href="/Blogi/about/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">About</a>
+              <a href="/Blogi/contact/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Contact</a>
+              <a href="/Blogi/disclaimer/" style="transform: none; transition: color 0.3s ease; color: #6c757d; text-decoration: none; font-weight: 500; padding: 0.5rem 0;" onmouseover="this.style.color='#007bff'" onmouseout="this.style.color='#6c757d'">Disclaimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid #e9ecef; margin-top: 2rem;">
+      <div class="copyright" style="transform: none;">
+        <p style="transform: none; margin: 0; color: #6c757d; font-size: 0.9rem;">&copy; 2025 My Blog Template. All rights reserved.</p>
+      </div>
+      
+      <div class="back-to-top">
+        <a href="#" id="back-to-top-btn" aria-label="Back to top" style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background-color: #007bff; color: white; border-radius: 50%; text-decoration: none; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#0056b3'" onmouseout="this.style.backgroundColor='#007bff'">
+          <i data-feather="chevron-up"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+  });
+</script>
+
+  </div>
+
+  <!-- Popup ads disabled -->
+  
+  <!-- Core scripts loaded asynchronously -->
+  <script src="/Blogi/assets/js/main.js" async></script>
+  <script src="/Blogi/assets/js/dark-mode.js" async></script>
+  <script src="/Blogi/assets/js/image-loader.js" async></script>
+  
+  <!-- Performance monitoring -->
+  <script>
+    window.performance.mark('scriptsLoaded');
+    window.performance.measure('loadTime', 'pageStart', 'scriptsLoaded');
+    
+    // Report performance metrics
+    window.addEventListener('load', function() {
+      if (window.performance && window.performance.getEntriesByType) {
+        const loadTime = window.performance.getEntriesByType('navigation')[0].loadEventEnd - window.performance.getEntriesByType('navigation')[0].navigationStart;
+        console.log('Page load time: ' + loadTime + 'ms');
+      }
+    });
+  </script>
+  
+  
+</body>
+</html>

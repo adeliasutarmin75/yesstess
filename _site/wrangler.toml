@@ -1,0 +1,40 @@
+name = "article-generator"
+main = "cloudflare-worker.js"
+compatibility_date = "2024-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# KV Storage for article data
+[[kv_namespaces]]
+binding = "ARTICLES_KV"
+id = "your-kv-namespace-id"
+preview_id = "your-preview-kv-namespace-id"
+
+# Scheduled trigger for daily article generation
+[triggers]
+crons = ["0 6 * * *"]  # Daily at 6 AM UTC
+
+# Environment variables (set via wrangler secret)
+[vars]
+GITHUB_REPO = "your-username/your-repo-name"
+GITHUB_BRANCH = "main"
+
+# Required secrets - Set using: wrangler secret put SECRET_NAME
+# 
+# REQUIRED SECRETS:
+# wrangler secret put GEMINI_API_KEYS
+# Enter: your-api-key-1,your-api-key-2,your-api-key-3
+#
+# wrangler secret put GITHUB_TOKEN  
+# Enter: ghp_xxxxxxxxxxxxxxxxxxxx (needs repo write permissions)
+#
+# OPTIONAL SECRETS:
+# wrangler secret put UNSPLASH_ACCESS_KEY
+# wrangler secret put PIXEL_API_CONFIG
+# wrangler secret put BLOG_KEYWORDS (fallback if keyword.txt not accessible)
+# wrangler secret put API_SECRET (for manual generation endpoint)
+# wrangler secret put GITHUB_WEBHOOK_SECRET (for webhook verification)
+#
+# PERMISSIONS NEEDED FOR GITHUB_TOKEN:
+# - repo (full repository access)
+# - workflow (update GitHub Actions workflows)
+# - write:packages (if using packages)

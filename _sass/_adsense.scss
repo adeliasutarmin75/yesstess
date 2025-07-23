@@ -1,0 +1,72 @@
+/* AdSense Styling */
+.header-adsense-container {
+  width: 100%;
+  margin: 1rem 0 2rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 5px;
+  min-height: 110px; /* Account for 90px ad + padding */
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    margin: 0.5rem 0 1.5rem;
+    min-height: 100px;
+  }
+  
+  /* Custom styling for the HEDER ad unit */
+  ins.adsbygoogle {
+    display: block !important;
+    margin: 0 auto;
+    background-color: transparent;
+    width: 100% !important;
+    min-height: 90px;
+  }
+}
+
+/* Standard ad container styling */
+.ad-container {
+  width: 100%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90px;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: rgba(248, 249, 250, 0.7);
+  border-radius: 5px;
+  overflow: hidden;
+  
+  &.ad-sidebar {
+    margin: 1rem 0;
+    min-height: 250px;
+  }
+  
+  &.ad-in-article {
+    margin: 2rem 0;
+    padding: 10px;
+    min-height: 220px;
+    clear: both;
+  }
+  
+  &.ad-footer {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    min-height: 90px;
+  }
+  
+  ins.adsbygoogle {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+/* Dark mode compatibility */
+[data-theme="dark"] {
+  .header-adsense-container,
+  .ad-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

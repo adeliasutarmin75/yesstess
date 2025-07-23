@@ -1,0 +1,20 @@
+<div class="social-share">
+  <h4>Share this post</h4>
+  <div class="share-buttons">
+    <a href="https://facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" rel="noopener" class="share-facebook" aria-label="Share on Facebook">
+      <i data-feather="facebook"></i>
+    </a>
+    <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url }}" target="_blank" rel="noopener" class="share-twitter" aria-label="Share on Twitter">
+      <i data-feather="twitter"></i>
+    </a>
+    <a href="https://pinterest.com/pin/create/button/?url={{ page.url | absolute_url }}&media={{ page.image | absolute_url }}&description={{ page.title | uri_escape }}" target="_blank" rel="noopener" class="share-pinterest" aria-label="Share on Pinterest">
+      <i data-feather="image"></i>
+    </a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | uri_escape }}" target="_blank" rel="noopener" class="share-linkedin" aria-label="Share on LinkedIn">
+      <i data-feather="linkedin"></i>
+    </a>
+    <a href="mailto:?subject={{ page.title | uri_escape }}&body={{ page.url | absolute_url }}" class="share-email" aria-label="Share via Email">
+      <i data-feather="mail"></i>
+    </a>
+  </div>
+</div>
