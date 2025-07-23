@@ -3,7 +3,7 @@ title: My Blog Template
 description: A clean and modern blog template
 author: Blog Author
 email: "info@adeliasutarmin75.github.io"
-baseurl: "/Blogiieeeess-ed" # the subpath of your site, e.g. /blog
+baseurl: "/yesstess" # the subpath of your site, e.g. /blog
 url: "https://adeliasutarmin75.github.io" # the base hostname & protocol for your site
 logo: /assets/img/logo.svg
 default_image: /assets/img/default-post-image.svg
